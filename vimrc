@@ -1,4 +1,3 @@
-""set vim to 256 colors,otherwise some colorscheme won't work
 set t_Co=256 
 "g:valuename 变量为全局变量
 let g:solarized_termcolors=256
@@ -69,7 +68,7 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
 " vim-scripts repos
 Bundle 'L9'
-Bundle 'FuzzyFinder.vim'
+Bundle 'vim-scripts/FuzzyFinder'
 
 filetype plugin indent on     " required!
 "
@@ -282,7 +281,6 @@ set completeopt=longest,menuone
 "handle the chinese problem"
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-language messages zh_CN.utf-8
 
 autocmd FileType python setlocal et sta sw=4 sts=4
 set tabstop=4
@@ -608,8 +606,6 @@ match LeaderTab /^\t/
 "自动配对html tag
 Bundle 'gregsexton/MatchTag'
 
-"在html tag中按%就跳向另外一个
-Bundle 'tsaleh/vim-matchit'
 
 " CTRL-X and SHIFT-Del are Cut
 vnoremap <C-X> "+x
