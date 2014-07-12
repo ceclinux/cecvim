@@ -55,8 +55,7 @@ set rtp+=~/.vim/bundle/vundle/
 " Lines with equal indent form a fold
 set fdm=indent
 
-call vundle#rc()
-" let Vundle manage Vundle
+call vundle#rc() " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
 " My Bundles here: "
@@ -280,7 +279,7 @@ set completeopt=longest,menuone
 
 "handle the chinese problem"
 set encoding=utf-8
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set fileencodings=utf8,cp936,gb18030,big5
 
 autocmd FileType python setlocal et sta sw=4 sts=4
 set tabstop=4
@@ -291,7 +290,8 @@ set incsearch " 查询时非常方便，如要查找book单词，当输入到/b�
 " " 找要匹配的单词时，别忘记回车
 
 "auto generate ctags"
-au BufWritePost *.sh,*.c,*.py,*.js silent! !ctags -R &> /dev/null &
+"au BufWritePost *.sh,*.c,*.py,*.js silent! !ctags -R &> /dev/null &
+
 
 
 "config code fold"
@@ -333,8 +333,8 @@ Bundle 'pangloss/vim-javascript'
 
 Bundle 'Kris2k/mark.vim'
 
-Bundle 'hallison/vim-markdown'
 
+Plugin 'suan/vim-instantmarkdown'
 
 
 imap <F4> <C-R>=line(".")<CR>
@@ -351,7 +351,8 @@ autocmd FileType mkd imap <F5> <Esc>:w<CR>:!../makemd.sh %<CR>
 autocmd FileType perl imap <F5> <Esc>:w<CR>:!perl %<CR>
 autocmd FileType python imap <F5> <Esc>:w<CR>:!python %<CR>
 
-Bundle 'https://github.com/gorodinskiy/vim-coloresque.git'
+
+map <F10> :set spell! <CR>
 
 Bundle 'nono/jquery.vim'
 
@@ -361,8 +362,6 @@ au BufRead,BufNewFile  *.ejs set filetype=html syntax=html
 Bundle 'Lokaltog/vim-powerline'
 let g:Powerline_symbols = 'fancy'
 
-Bundle 'tpope/vim-surround'
-
 Bundle 'vim-scripts/awk.vim'
 
 
@@ -370,6 +369,7 @@ Bundle 'altercation/vim-colors-solarized'
 "When set to "dark", Vim will try to use colors that look good on a
 "	dark background.  When set to "light", Vim will try to use colors that
 "	look good on a light background.
+syntax enable
 set background=dark
 colorscheme solarized
 
@@ -650,3 +650,4 @@ set hlsearch
 inoremap , ,<space>
 
 Bundle 'terryma/vim-multiple-cursors'
+set complete+=kspell

@@ -8,9 +8,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 .gitignore
-args .gitignore
-edit .gitignore
+badd +0 a.mkd
+argglobal
+silent! argdel *
+argadd a.mkd
+edit a.mkd
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -25,7 +27,7 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 14) / 29)
+let s:l = 1 - ((0 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
