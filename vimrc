@@ -189,7 +189,7 @@ nmap <F9> :vsp ~/.vimrc<CR>
 Bundle 'python.vim' 
 
 "check syntax
-Bundle 'andviro/flake8-vim'
+"Bundle 'andviro/flake8-vim'
 
 Bundle 'fs111/pydoc.vim'        
 
@@ -616,7 +616,6 @@ vnoremap <C-C> "+y
 vnoremap <C-Insert> "+y
 
 " CTRL-V and SHIFT-Insert are Paste
-map <C-V> "+gP
 map <S-Insert> "+gP
 
 cmap <C-V> <C-R>+
@@ -651,3 +650,7 @@ inoremap , ,<space>
 
 Bundle 'terryma/vim-multiple-cursors'
 set complete+=kspell
+
+Bundle 'davidhalter/jedi-vim'
+let g:jedi#auto_initialization = 0
+
