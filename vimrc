@@ -51,7 +51,7 @@ set nocompatible               " be iMproved
 "
 filetype off                   " required!
 " This is a list of directories which will be searched for runtime files:  
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 " Lines with equal indent form a fold
 set fdm=indent
 
