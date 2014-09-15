@@ -19,4 +19,9 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 然后进入vim
 输入`:BundleInstall`
 
-搞定
+##依赖
+
+python-jedi
+python2-jedi
+silver-searcher-git
+ctags
