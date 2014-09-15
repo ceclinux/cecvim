@@ -5,7 +5,7 @@ my vim configuration
 
 ##效果
 
-![](http://img.vim-cn.com/33/6fd2f1a4688c3de24c183badf8c215dba9f7fb.png）
+![](http://img.vim-cn.com/33/6fd2f1a4688c3de24c183badf8c215dba9f7fb.png)
 
 ##如何安装
 
