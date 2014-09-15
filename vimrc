@@ -334,7 +334,6 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'Kris2k/mark.vim'
 
 
-Plugin 'suan/vim-instantmarkdown'
 
 
 imap <F4> <C-R>=line(".")<CR>
@@ -653,4 +652,3 @@ set complete+=kspell
 
 Bundle 'davidhalter/jedi-vim'
 let g:jedi#auto_initialization = 0
-
