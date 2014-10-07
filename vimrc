@@ -350,6 +350,7 @@ autocmd FileType mkd imap <F5> <Esc>:w<CR>:!../makemd.sh %<CR>
 autocmd FileType perl imap <F5> <Esc>:w<CR>:!perl %<CR>
 autocmd FileType python imap <F5> <Esc>:w<CR>:!python %<CR>
 
+autocmd FileType mkd inoremap <F4> ![]()<Left>
 
 map <F10> :set spell! <CR>
 
@@ -652,3 +653,7 @@ set complete+=kspell
 
 Bundle 'davidhalter/jedi-vim'
 let g:jedi#auto_initialization = 0
+
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
+
