@@ -33,9 +33,9 @@ let g:mapleader=','
 "editing.
 "See also 'cpoptions'.
 
-set nocompatible               " be iMproved
-"Detail: The ":filetype on" command will load one of these files:
-"		Amiga	    $VIMRUNTIME/filetype.vim
+" be iMproved
+set nocompatible
+"Detail: The ":filetype on" command will load one of these files: "		Amiga	    $VIMRUNTIME/filetype.vim
 "		Mac	    $VIMRUNTIME:filetype.vim
 "		MS-DOS	    $VIMRUNTIME\filetype.vim
 "		RiscOS	    Vim:Filetype
@@ -81,9 +81,6 @@ filetype plugin indent on     " required!
 " NOTE: comments after Bundle command are not allowed..
 
 
-Bundle 'scrooloose/nerdtree'
-"f2 to open nerdtree
-nmap <f2> :NERDTreeToggle<cr> 
 
 Bundle 'taglist.vim'
 "不同时显示多个文件的tag，只显示当前文件的
@@ -134,7 +131,7 @@ set backupdir=$HOME/.vim/backup
 "	echo "tabstop is " . &tabstop
 "	if &insertmode
 "
-autocmd  * let &backupext = strftime(".%m-%d-%H-%M")
+autocmd BufWritePre * let &backupext = strftime(".%m-%d-%H-%M")
 
 ""必须要第一个大写
 ""除了文件格式是mkd的，其他都必须对齐
@@ -183,7 +180,6 @@ endfun
 nmap <C-]> :call SPLITAG()<CR>z.
 
 
-nmap <F9> :vsp ~/.vimrc<CR>
 
 "highlight enhancer for the python
 Bundle 'python.vim' 
@@ -331,26 +327,14 @@ Bundle 'vim-scripts/c.vim'
 
 Bundle 'pangloss/vim-javascript'
 
-Bundle 'Kris2k/mark.vim'
 
 
-
-
-imap <F4> <C-R>=line(".")<CR>
-map <F6> "+p
 
 
 au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=mkd syntax=markdown
 
-autocmd FileType javascript imap <F5> <Esc>:w<CR>:!rhino -f %<CR>
-autocmd FileType html imap <F5> <Esc>:w<CR>:!google-chrome  %<CR>
-autocmd FileType javascript map <F5> :w<CR>
-autocmd fileType sh imap <F5> <Esc>:w<CR>:!bash %<CR>
-autocmd FileType mkd imap <F5> <Esc>:w<CR>:!../makemd.sh %<CR>
-autocmd FileType perl imap <F5> <Esc>:w<CR>:!perl %<CR>
-autocmd FileType python imap <F5> <Esc>:w<CR>:!python %<CR>
-
 autocmd FileType mkd inoremap <F4> ![]()<Left>
+autocmd FileType mkd inoremap ` ``<Left>
 
 map <F10> :set spell! <CR>
 
@@ -526,7 +510,6 @@ Bundle 'vim-scripts/EasyGrep'
 "will be deleted.
 Bundle 'Raimondi/delimitMate'
 
-inoremap <F3> <Esc><right>a
 
 
 ""Bundle 'junegunn/goyo.vim'
@@ -541,7 +524,6 @@ inoremap <F3> <Esc><right>a
 
 Bundle 'tpope/vim-surround'
 
-map <f7> ysiw
 
 "gq拆行"
 "set textwidth=78
@@ -579,13 +561,16 @@ Bundle 'Shougo/neocomplcache.vim'
 let g:neocomplcache_enable_at_startup = 1
 
 
+"自动产生session插件
 Bundle 'tpope/vim-obsession'
-au BufWritePost * Obsession .vimsession 
+au BufWritePost * Obsession .vimsession
 
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 "statusline插件"
-Bundle 'bling/vim-airline' 
+"h airline
+Bundle 'bling/vim-airline'
+let g:airline_theme='hybrid'
 
 " 显示tab和空格
 set list
@@ -648,12 +633,42 @@ set hlsearch
 
 inoremap , ,<space>
 
+"按C-N就选择一个单词，连续按就连续选择同样的单词
+"CTRL-P in Visual mode will remove the current virtual cursor and go back to
+"the previous virtual cursor location. This is useful if you are trigger happy
+"with Ctrl-n and accidentally went too far.
+
+"CTRL-X in Visual mode will remove the current virtual cursor and skip to the
+"next virtual cursor location. This is useful if you don't want the current
+"selection to be a candidate to operate on later.
 Bundle 'terryma/vim-multiple-cursors'
 set complete+=kspell
 
 Bundle 'davidhalter/jedi-vim'
-let g:jedi#auto_initialization = 0
+"let g:jedi#auto_initialization = 0
 
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
+
+Bundle 'kchmck/vim-coffee-script'
+
+
+Bundle 'scrooloose/nerdtree'
+"f2 to open nerdtree
+nmap <F2> :NERDTreeToggle<cr>
+"在insert模式下向右移动一格
+inoremap <F3> <Esc><right>a
+"打印当前行数，方便于调试
+imap <F4> <C-R>=line(".")<CR>
+autocmd FileType javascript map <F5> <Esc>:w<CR>:!node %<CR>
+autocmd FileType html map <F5> <Esc>:w<CR>:!google-chrome  %<CR>
+autocmd fileType sh map <F5> <Esc>:w<CR>:!zsh %<CR>
+autocmd FileType perl map <F5> <Esc>:w<CR>:!perl %<CR>
+autocmd FileType python map <F5> <Esc>:w<CR>:!python %<CR>
+map <F6> "+p
+"在单词外圈加成对符号
+map <F7> ysiw
+"在nautilus打开当前目录
+map <F8> :!nautilus $(pwd)<CR>
+nmap <F9> :vsp ~/.vimrc<CR>
