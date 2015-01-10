@@ -149,10 +149,6 @@ autocmd BufWritePre * let &backupext = strftime(".%m-%d-%H-%M")
 "<leader>cspace to comment out and reverse comment
 Bundle 'scrooloose/nerdcommenter'
 
-Bundle 'Pydiction'
-let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
-
-
 "Show the undo tree"
 Bundle 'Gundo'
 map <leader>g :GundoToggle<CR>
@@ -182,12 +178,12 @@ nmap <C-]> :call SPLITAG()<CR>z.
 
 
 "highlight enhancer for the python
-Bundle 'python.vim' 
+Bundle 'python.vim'
 
 "check syntax
 "Bundle 'andviro/flake8-vim'
 
-Bundle 'fs111/pydoc.vim'        
+Bundle 'fs111/pydoc.vim'
 
 "自动补全
 "automatically add space
@@ -319,7 +315,7 @@ let g:user_emmet_settings = {
 
 autocmd FileType html imap <tab> <plug>(EmmetExpandAbbr)
 
-Bundle 'othree/html5.vim'  
+Bundle 'othree/html5.vim'
 
 let g:user_emmet_leader_key = '<C-A>'
 
@@ -646,6 +642,8 @@ set complete+=kspell
 
 Bundle 'davidhalter/jedi-vim'
 "let g:jedi#auto_initialization = 0
+let g:jedi#popup_select_first=0
+let g:jedi#popup_on_dot = 0
 
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
