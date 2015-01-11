@@ -1,4 +1,4 @@
-set t_Co=256 
+set t_Co=256
 "g:valuename 变量为全局变量
 let g:solarized_termcolors=256
 let g:mapleader=','
@@ -50,13 +50,13 @@ set nocompatible
 "
 "
 filetype off                   " required!
-" This is a list of directories which will be searched for runtime files:  
+" This is a list of directories which will be searched for runtime files:
 set rtp+=~/.vim/bundle/Vundle.vim
 " Lines with equal indent form a fold
 set fdm=indent
 
 call vundle#rc() " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 " My Bundles here: "
 " original repos on github
@@ -84,18 +84,18 @@ filetype plugin indent on     " required!
 
 Bundle 'taglist.vim'
 "不同时显示多个文件的tag，只显示当前文件的
-let Tlist_Show_One_File = 1            
+let Tlist_Show_One_File = 1
 "如果taglist窗口是最后一个窗口，则退出vim
-let Tlist_Exit_OnlyWindow = 1          
-"在右侧窗口中显示taglist窗口 
-let Tlist_Use_Right_Window = 1         
+let Tlist_Exit_OnlyWindow = 1
+"在右侧窗口中显示taglist窗口
+let Tlist_Use_Right_Window = 1
 "自动代开taglist窗口
-let Tlist_Auto_Open = 1		       
+let Tlist_Auto_Open = 1		
 "Close tag folds for inactive buffers.
 let Tlist_File_Fold_Auto_Close = 1
 
 "precede each line with its line number"
-set nu 
+set nu
 "type rw to refactor script map <expr> rw Replace_Current_Word()
 map <expr> rw Replace_Current_Word()
 func Replace_Current_Word()
@@ -105,20 +105,9 @@ func Replace_Current_Word()
     return "\<ESC>:%s/\\<".w."\\>/".w."/g\<Left>\<Left>"
 endfun
 
-
 Bundle 'rking/ag.vim'
 "基于ag的文件内搜索的插件"
 Bundle 'dyng/ctrlsf.vim'
-
-"re search全局搜索当前单词"
-map <expr> re Search_Current_Word()
-func Search_Current_Word()
-    "<cword>    is replaced with the word under the cursor (like |star|)
-    let e = expand("<cword>")
-    "string连接用.即可"
-    return "\<ESC>:CtrlSF ".e
-endfun
-
 
 " vim备份脚本
 " Turn backup on
@@ -132,19 +121,6 @@ set backupdir=$HOME/.vim/backup
 "	if &insertmode
 "
 autocmd BufWritePre * let &backupext = strftime(".%m-%d-%H-%M")
-
-""必须要第一个大写
-""除了文件格式是mkd的，其他都必须对齐
-"fun! IndentAuto()
-    ""don't indent markdown'"
-    "if &ft = 'mkd'
-        "return
-    "endif
-    "gg=G``
-"endfun
-
-"autocmd BufWritePre * normal call indentAuto()
-
 "<leader> cs comment a block"
 "<leader>cspace to comment out and reverse comment
 Bundle 'scrooloose/nerdcommenter'
@@ -214,7 +190,7 @@ function CloseBracket()
     endif
 endf
 
-function QuoteDelim(char) 
+function QuoteDelim(char)
     let line = getline('.')
     let col = col('.')
     if line[col - 2] == "\\"
@@ -244,7 +220,7 @@ endf
 function! EqualSign(char)
     if a:char  =~ '='  && getline('.') =~ ".*("
         return a:char
-    endif 
+    endif
     let ex1 = getline('.')[col('.') - 3]
     let ex2 = getline('.')[col('.') - 2]
 
@@ -253,13 +229,13 @@ function! EqualSign(char)
             return "\<ESC>i".a:char."\<SPACE>"
         else
             return "\<ESC>xa".a:char."\<SPACE>"
-        endif 
+        endif
     else
         if ex2 !~ "\s"
             return "\<SPACE>".a:char."\<SPACE>\<ESC>a"
         else
             return a:char."\<SPACE>\<ESC>a"
-        endif 
+        endif
     endif
 endf
 
@@ -267,7 +243,7 @@ endf
 set completeopt=longest,menuone
 
 
-"Bundle 'kovagoz/vim-autocomplpop' 
+"Bundle 'kovagoz/vim-autocomplpop'
 
 "handle the chinese problem"
 set encoding=utf-8
@@ -284,14 +260,11 @@ set incsearch " 查询时非常方便，如要查找book单词，当输入到/b�
 "auto generate ctags"
 "au BufWritePost *.sh,*.c,*.py,*.js silent! !ctags -R &> /dev/null &
 
-
-
 "config code fold"
 set foldmethod=indent
 set foldlevel=99
 
 Bundle 'morhetz/gruvbox'
-
 
 set conceallevel=1
 
@@ -307,7 +280,7 @@ let g:user_emmet_settings = {
             \  'xml' : {
             \    'extends' : 'html',
             \  },
-            \  'haml' : { 
+            \  'haml' : {
             \       'extends' : 'html',
             \  },
             \}
@@ -320,12 +293,7 @@ Bundle 'othree/html5.vim'
 let g:user_emmet_leader_key = '<C-A>'
 
 Bundle 'vim-scripts/c.vim'
-
 Bundle 'pangloss/vim-javascript'
-
-
-
-
 
 au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=mkd syntax=markdown
 
@@ -354,7 +322,7 @@ set background=dark
 colorscheme solarized
 
 
-Bundle 'vim-misc' 
+Bundle 'vim-misc'
 
 Bundle 'maksimr/vim-jsbeautify'
 
@@ -468,7 +436,7 @@ for i in range(1, 9)
 endfor
 
 "神级插件,ctrlp呼出"
-Bundle 'kien/ctrlp.vim' 
+Bundle 'kien/ctrlp.vim'
 "ctrlp忽略node_modules"
 let g:ctrlp_custom_ignore = {
             \ 'dir':  'node_modules/',
@@ -536,7 +504,7 @@ autocmd BufWritePre *.json Tab /:
 "语法提示
 "Bundle 'walm/jshint.vim'
 "保存之前自动quickfix"
-"autocmd BufWritePre *.js JSHint 
+"autocmd BufWritePre *.js JSHint
 ""quickfix映射
 ""下一个错误
 nmap <leader>cd :cn<cr>
@@ -648,9 +616,7 @@ let g:jedi#popup_on_dot = 0
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
-
 Bundle 'kchmck/vim-coffee-script'
-
 
 Bundle 'scrooloose/nerdtree'
 "f2 to open nerdtree
