@@ -105,8 +105,9 @@ func Replace_Current_Word()
     return "\<ESC>:%s/\\<".w."\\>/".w."/g\<Left>\<Left>"
 endfun
 
-Bundle 'rking/ag.vim'
 "基于ag的文件内搜索的插件"
+":Ag 输入关键字
+Bundle 'rking/ag.vim'
 Bundle 'dyng/ctrlsf.vim'
 
 " vim备份脚本
@@ -161,61 +162,6 @@ Bundle 'python.vim'
 
 Bundle 'fs111/pydoc.vim'
 
-"自动补全
-"automatically add space
-"inoremap ( ()<Esc>i
-"inoremap [ []<Esc>i
-"autocmd FileType perl imap { {}<Esc>i<CR><Esc>O
-"autocmd FileType javascript imap { {}<Esc>i
-"inoremap ) <c-r>=ClosePair(')')<CR>
-"inoremap ] <c-r>=ClosePair(']')<CR>
-"inoremap } <c-r>=ClosePair('}')<CR>
-"inoremap " <c-r>=QuoteDelim('"')<CR>
-"inoremap ' <c-r>=QuoteDelim("'")<CR>
-
-function ClosePair(char)
-    if getline('.')[col('.') - 1] == a:char
-        return "\<Right>"
-
-    else
-        return a:char
-    endif
-endf
-
-function CloseBracket()
-    if match(getline(line('.') + 1), '\s*}') < 0
-        return "\<CR>}"
-    else
-        return "\<Esc>j0f}a"
-    endif
-endf
-
-function QuoteDelim(char)
-    let line = getline('.')
-    let col = col('.')
-    if line[col - 2] == "\\"
-        "Inserting a quoted quotation mark into the string
-        return a:char
-    elseif line[col - 1] == a:char
-        "Escaping out of the string
-        return "\<Right>"
-    else
-        "Starting a string
-        return a:char.a:char."\<Esc>i"
-    endif
-endf
-
-"auto generate space  "
-"if exists("g:equ")
-":inoremap = <c-r>=EqualSign('=')<CR>
-":inoremap + <c-r>=EqualSign('+')<CR>
-":inoremap - <c-r>=EqualSign('-')<CR>
-":inoremap * <c-r>=EqualSign('*')<CR>
-":inoremap / <c-r>=EqualSign('/')<CR>
-":inoremap > <c-r>=EqualSign('>')<CR>
-":inoremap < <c-r>=EqualSign('<')<CR>
-":inoremap , ,<space>
-"endif
 
 function! EqualSign(char)
     if a:char  =~ '='  && getline('.') =~ ".*("
