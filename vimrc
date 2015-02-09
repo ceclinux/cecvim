@@ -122,6 +122,7 @@ set backupdir=$HOME/.vim/backup
 "	if &insertmode
 "
 autocmd BufWritePre * let &backupext = strftime(".%m-%d-%H-%M")
+autocmd BufWritePre * Autoformat
 "<leader> cs comment a block"
 "<leader>cspace to comment out and reverse comment
 Bundle 'scrooloose/nerdcommenter'
@@ -152,44 +153,8 @@ fun! SPLITAG() range
 endfun
 nmap <C-]> :call SPLITAG()<CR>z.
 
-
-
-"highlight enhancer for the python
-Bundle 'python.vim'
-
-"check syntax
-"Bundle 'andviro/flake8-vim'
-
-Bundle 'fs111/pydoc.vim'
-
-
-function! EqualSign(char)
-    if a:char  =~ '='  && getline('.') =~ ".*("
-        return a:char
-    endif
-    let ex1 = getline('.')[col('.') - 3]
-    let ex2 = getline('.')[col('.') - 2]
-
-    if ex1 =~ "[-=+><>\/\*]"
-        if ex2 !~ "\s"
-            return "\<ESC>i".a:char."\<SPACE>"
-        else
-            return "\<ESC>xa".a:char."\<SPACE>"
-        endif
-    else
-        if ex2 !~ "\s"
-            return "\<SPACE>".a:char."\<SPACE>\<ESC>a"
-        else
-            return a:char."\<SPACE>\<ESC>a"
-        endif
-    endif
-endf
-
 "polish complete problem"
 set completeopt=longest,menuone
-
-
-"Bundle 'kovagoz/vim-autocomplpop'
 
 "handle the chinese problem"
 set encoding=utf-8
@@ -258,7 +223,6 @@ let g:Powerline_symbols = 'fancy'
 
 Bundle 'vim-scripts/awk.vim'
 
-
 Bundle 'altercation/vim-colors-solarized'
 "When set to "dark", Vim will try to use colors that look good on a
 "	dark background.  When set to "light", Vim will try to use colors that
@@ -266,7 +230,6 @@ Bundle 'altercation/vim-colors-solarized'
 syntax enable
 set background=dark
 colorscheme solarized
-
 
 Bundle 'vim-misc'
 
@@ -280,31 +243,6 @@ set autoindent
 set smartindent
 
 au BufWritePost *.tex call UpdateTex()
-
-" update function
-function! UpdateTex()
-    silent !xelatex --shell-escape % > /dev/null 2>&1 &
-    silent !evince %<.pdf > /dev/null 2>&1 &
-endf
-
-""au BufWritePost *.html call UpdateHTML()
-
-" update function
-function! UpdateHTML()
-    silent !firefox % > /dev/null &
-endf
-
-"function MayCloseParentheses()
-""（当前指针的横坐标）是否等于（当前指针所在行的长度加一）,即判断指针是否在当前行的末端
-"if col('.') == col('$')
-""返回(),然后指针向左移一位(移入括号中)
-"return "()\<Left>"
-"else
-"return "("
-"endif
-"endfunction
-""<expr>为对方法的映射，
-"inoremap <expr>  ( MayCloseParentheses()
 
 " <alt>键的映射~
 " Author:       lilydjwg <lilydjwg@gmail.com>
@@ -582,3 +520,7 @@ map <F7> ysiw
 "在nautilus打开当前目录
 map <F8> :!nautilus $(pwd)<CR>
 nmap <F9> :vsp ~/.vimrc<CR>
+
+"自动整理代码代码
+Bundle 'Chiel92/vim-autoformat'
+
