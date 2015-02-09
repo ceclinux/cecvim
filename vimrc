@@ -523,4 +523,4 @@ nmap <F9> :vsp ~/.vimrc<CR>
 
 "自动整理代码代码
 Bundle 'Chiel92/vim-autoformat'
-
+Bundle 'mhinz/vim-startify'
