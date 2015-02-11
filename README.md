@@ -25,5 +25,5 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 - python2-jedi
 - silver-searcher-git
 - ctags
-    - autopep8
+- autopep8
 - js-beautify(npm install -g js-beautify)
