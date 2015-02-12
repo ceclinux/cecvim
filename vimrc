@@ -242,8 +242,6 @@ set expandtab
 set autoindent
 set smartindent
 
-au BufWritePost *.tex call UpdateTex()
-
 " <alt>键的映射~
 " Author:       lilydjwg <lilydjwg@gmail.com>
 " ---------------------------------------------------------------------
