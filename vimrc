@@ -179,8 +179,7 @@ Bundle 'morhetz/gruvbox'
 
 set conceallevel=1
 
-map <F8> :w<CR>:qa!<CR>
-
+"C-A + key to activate emmet
 Bundle 'mattn/emmet-vim'
 
 let g:user_emmet_settings = {
@@ -197,12 +196,10 @@ let g:user_emmet_settings = {
             \}
 
 
+let g:user_emmet_leader_key = '<C-A>'
 autocmd FileType html imap <tab> <plug>(EmmetExpandAbbr)
 
 Bundle 'othree/html5.vim'
-
-let g:user_emmet_leader_key = '<C-A>'
-
 Bundle 'vim-scripts/c.vim'
 Bundle 'pangloss/vim-javascript'
 
