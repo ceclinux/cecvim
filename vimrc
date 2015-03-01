@@ -515,6 +515,7 @@ map <F7> ysiw
 "在nautilus打开当前目录
 map <F8> :!nautilus $(pwd)<CR>
 nmap <F9> :vsp ~/.vimrc<CR>
+nmap <leader>t :tabnew<CR><C-P>
 
 "自动整理代码代码
 Bundle 'Chiel92/vim-autoformat'
@@ -525,3 +526,4 @@ set hidden
 set undofile
 " set a directory to store the undo history
 set undodir=/home/ceclinux/.vim/vimundo/
+
