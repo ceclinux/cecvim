@@ -122,7 +122,6 @@ set backupdir=$HOME/.vim/backup
 "	if &insertmode
 "
 autocmd BufWritePre * let &backupext = strftime(".%m-%d-%H-%M")
-autocmd BufWritePre * Autoformat
 "<leader> cs comment a block"
 "<leader>cspace to comment out and reverse comment
 Bundle 'scrooloose/nerdcommenter'
@@ -519,6 +518,7 @@ nmap <leader>t :tabnew<CR><C-P>
 
 "自动整理代码代码
 Bundle 'Chiel92/vim-autoformat'
+autocmd BufWritePre *.py,*.js Autoformat
 Bundle 'mhinz/vim-startify'
 
 set hidden
