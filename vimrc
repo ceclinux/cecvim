@@ -61,7 +61,6 @@ Bundle 'gmarik/vundle'
 " My Bundles here: "
 " original repos on github
 "a git wrapper"
-Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
@@ -108,7 +107,6 @@ endfun
 "基于ag的文件内搜索的插件"
 ":Ag 输入关键字
 Bundle 'rking/ag.vim'
-Bundle 'dyng/ctrlsf.vim'
 
 " vim备份脚本
 " Turn backup on
@@ -214,8 +212,8 @@ Bundle 'nono/jquery.vim'
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 au BufRead,BufNewFile  *.ejs set filetype=html syntax=html
 
-Bundle 'Lokaltog/vim-powerline'
-let g:Powerline_symbols = 'fancy'
+"Bundle 'Lokaltog/vim-powerline'
+"let g:Powerline_symbols = 'fancy'
 
 Bundle 'vim-scripts/awk.vim'
 
@@ -514,6 +512,7 @@ map <F7> ysiw
 "在nautilus打开当前目录
 map <F8> :!nautilus $(pwd)<CR>
 nmap <F9> :vsp ~/.vimrc<CR>
+"按, + t开一个新的tab
 nmap <leader>t :tabnew<CR><C-P>
 
 "自动整理代码代码
@@ -526,4 +525,11 @@ set hidden
 set undofile
 " set a directory to store the undo history
 set undodir=/home/ceclinux/.vim/vimundo/
+set autoread
 
+"run shell in vim
+Bundle 'Shougo/vimproc.vim'
+Bundle 'Shougo/vimshell.vim'
+"按，+ s开vimshell
+nmap <leader>s :VimShellPop<CR>
+Bundle 'tpope/vim-fugitive'

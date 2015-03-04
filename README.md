@@ -18,6 +18,8 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 然后进入vim
 输入`:BundleInstall`
+再次进入vim
+输入`:VimProcInstall`
 
 ##依赖
 
