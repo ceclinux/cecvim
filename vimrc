@@ -410,7 +410,6 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 "statusline插件"
 "h airline
 Bundle 'bling/vim-airline'
-let g:airline_theme='hybrid'
 
 " 显示tab和空格
 set list
