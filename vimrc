@@ -532,3 +532,7 @@ Bundle 'Shougo/vimshell.vim'
 "按，+ s开vimshell
 nmap <leader>s :VimShellPop<CR>
 Bundle 'tpope/vim-fugitive'
+nmap <leader>i :Gstatus<CR>
+nmap <leader>c :Gcommit<CR>
+
+autocmd Filetype gitcommit setlocal spell textwidth=72
