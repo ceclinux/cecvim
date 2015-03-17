@@ -535,4 +535,5 @@ Bundle 'tpope/vim-fugitive'
 nmap <leader>i :Gstatus<CR>
 nmap <leader>c :Gcommit<CR>
 
+"set textwidth of the gitcommit
 autocmd Filetype gitcommit setlocal spell textwidth=72
