@@ -509,14 +509,14 @@ map <F6> "+p
 "在单词外圈加成对符号
 map <F7> ysiw
 "在nautilus打开当前目录
-map <F8> :!nautilus $(pwd)<CR>
+map <F8> :silent !tmux new -d "nautilus $(pwd)"<CR>:redraw!<CR>
 nmap <F9> :vsp ~/.vimrc<CR>
 "按, + t开一个新的tab
 nmap <leader>t :tabnew<CR><C-P>
 
 "自动整理代码代码
 Bundle 'Chiel92/vim-autoformat'
-autocmd BufWritePre *.py,*.js Autoformat
+autocmd BufWritePre *.py,*.js Autoformat redraw!
 Bundle 'mhinz/vim-startify'
 
 set hidden
