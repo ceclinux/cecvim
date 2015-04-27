@@ -29,3 +29,4 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 - ctags
 - autopep8
 - js-beautify(npm install -g js-beautify)
+- fanyi(npm install -g fanyi)

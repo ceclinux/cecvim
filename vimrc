@@ -1,6 +1,7 @@
+set guifont=monospace\ 14
 set t_Co=256
 "g:valuename 变量为全局变量
-let g:solarized_termcolors=256
+"let g:solarized_termcolors=256
 let g:mapleader=','
 "This option has the effect of making Vim either more Vi-compatible, or
 "make Vim behave in a more useful way.
@@ -80,7 +81,7 @@ filetype plugin indent on     " required!
 " NOTE: comments after Bundle command are not allowed..
 
 
-
+Bundle 'tomasr/molokai'
 Bundle 'taglist.vim'
 "不同时显示多个文件的tag，只显示当前文件的
 let Tlist_Show_One_File = 1
@@ -222,8 +223,8 @@ Bundle 'altercation/vim-colors-solarized'
 "	dark background.  When set to "light", Vim will try to use colors that
 "	look good on a light background.
 syntax enable
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme solarized
 
 Bundle 'vim-misc'
 
@@ -505,18 +506,21 @@ autocmd FileType html map <F5> <Esc>:w<CR>:!google-chrome  %<CR>
 autocmd fileType sh map <F5> <Esc>:w<CR>:!zsh %<CR>
 autocmd FileType perl map <F5> <Esc>:w<CR>:!perl %<CR>
 autocmd FileType python map <F5> <Esc>:w<CR>:!python %<CR>
+"翻译当前单词
+autocmd FileType mkd set keywordprg=fanyi 
+
 map <F6> "+p
 "在单词外圈加成对符号
 map <F7> ysiw
 "在nautilus打开当前目录
-map <F8> :silent !tmux new -d "nautilus $(pwd)"<CR>:redraw!<CR>
+map <F8> :silent !byobu new -d "nautilus $(pwd)"<CR>:redraw!<CR>
 nmap <F9> :vsp ~/.vimrc<CR>
 "按, + t开一个新的tab
 nmap <leader>t :tabnew<CR><C-P>
 
 "自动整理代码代码
 Bundle 'Chiel92/vim-autoformat'
-autocmd BufWritePre *.py,*.js Autoformat redraw!
+autocmd QuitPre *.py,*.js Autoformat redraw!
 Bundle 'mhinz/vim-startify'
 
 set hidden
@@ -536,4 +540,10 @@ nmap <leader>i :Gstatus<CR>
 nmap <leader>c :Gcommit<CR>
 
 "set textwidth of the gitcommit
+set background=dark
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
+set background=dark
