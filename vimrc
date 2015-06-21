@@ -501,12 +501,13 @@ nmap <F2> :NERDTreeToggle<cr>
 inoremap <F3> <Esc><right>a
 "打印当前行数，方便于调试
 imap <F4> <C-R>=line(".")<CR>
+autocmd Filetype mkd imap <F4> $$$$<Esc><right>i 
 autocmd FileType javascript map <F5> <Esc>:w<CR>:!node %<CR>
 autocmd FileType html map <F5> <Esc>:w<CR>:!google-chrome  %<CR>
 autocmd fileType sh map <F5> <Esc>:w<CR>:!zsh %<CR>
 autocmd FileType perl map <F5> <Esc>:w<CR>:!perl %<CR>
 autocmd FileType python map <F5> <Esc>:w<CR>:!python %<CR>
-"翻译当前单词
+"按K翻译当前单词
 autocmd FileType mkd set keywordprg=fanyi 
 
 map <F6> "+p
@@ -520,7 +521,7 @@ nmap <leader>t :tabnew<CR><C-P>
 
 "自动整理代码代码
 Bundle 'Chiel92/vim-autoformat'
-autocmd QuitPre *.py,*.js Autoformat redraw!
+"autocmd QuitPre *.py,*.js Autoformat redraw!
 Bundle 'mhinz/vim-startify'
 
 set hidden
@@ -547,3 +548,18 @@ colorscheme molokai
 let g:molokai_original = 1
 let g:rehash256 = 1
 set background=dark
+
+
+"Plugin 'scrooloose/syntastic'
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_python_checkers = ['pyflakes']
+Bundle 'nvie/vim-flake8'
+autocmd BufWritePost *.py call Flake8()
+
