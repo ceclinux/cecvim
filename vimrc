@@ -202,6 +202,7 @@ Bundle 'vim-scripts/c.vim'
 Bundle 'pangloss/vim-javascript'
 
 au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=mkd syntax=markdown
+au BufRead,BufNewFile *.{asm}   set filetype=masm syntax=masm
 
 autocmd FileType mkd inoremap <F4> ![]()<Left>
 autocmd FileType mkd inoremap ` ``<Left>
