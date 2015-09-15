@@ -56,43 +56,41 @@ set rtp+=~/.vim/bundle/Vundle.vim
 " Lines with equal indent form a fold
 set fdm=indent
 
-call vundle#rc() " let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-" My Bundles here: "
-" original repos on github
-"a git wrapper"
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
+call vundle#begin() " let Vundle manage Vundle
+Plugin 'VundleVim/Vundle.vim'
+"colorscheme
+Plugin 'morhetz/gruvbox'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'tpope/vim-rails.git'
 " vim-scripts repos
-Bundle 'L9'
-Bundle 'vim-scripts/FuzzyFinder'
+Plugin 'L9'
+Plugin 'vim-scripts/FuzzyFinder'
 
 filetype plugin indent on     " required!
 "
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :PluginList          - list configured bundles
+" :PluginInstall(!)    - install(update) bundles
+" :PluginSearch(!) foo - search(or refresh cache first) for foo
+" :PluginClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+" NOTE: comments after Plugin command are not allowed..
 
 
 Bundle 'tomasr/molokai'
-Bundle 'taglist.vim'
-"不同时显示多个文件的tag，只显示当前文件的
-let Tlist_Show_One_File = 1
-"如果taglist窗口是最后一个窗口，则退出vim
-let Tlist_Exit_OnlyWindow = 1
-"在右侧窗口中显示taglist窗口
-let Tlist_Use_Right_Window = 1
-"自动代开taglist窗口
-let Tlist_Auto_Open = 1		
-"Close tag folds for inactive buffers.
-let Tlist_File_Fold_Auto_Close = 1
+"Plugin 'taglist.vim'
+""不同时显示多个文件的tag，只显示当前文件的
+"let Tlist_Show_One_File = 1
+""如果taglist窗口是最后一个窗口，则退出vim
+"let Tlist_Exit_OnlyWindow = 1
+""在右侧窗口中显示taglist窗口
+"let Tlist_Use_Right_Window = 1
+""自动代开taglist窗口
+"let Tlist_Auto_Open = 1		
+""Close tag folds for inactive buffers.
+"let Tlist_File_Fold_Auto_Close = 1
 
 "precede each line with its line number"
 set nu
@@ -107,7 +105,7 @@ endfun
 
 "基于ag的文件内搜索的插件"
 ":Ag 输入关键字
-Bundle 'rking/ag.vim'
+Plugin 'rking/ag.vim'
 
 " vim备份脚本
 " Turn backup on
@@ -123,13 +121,13 @@ set backupdir=$HOME/.vim/backup
 autocmd BufWritePre * let &backupext = strftime(".%m-%d-%H-%M")
 "<leader> cs comment a block"
 "<leader>cspace to comment out and reverse comment
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 
 "Show the undo tree"
-Bundle 'Gundo'
+Plugin 'Gundo'
 map <leader>g :GundoToggle<CR>
 
-Bundle 'msanders/snipmate.vim'
+Plugin 'msanders/snipmate.vim'
 
 
 "When jumping on a tag, automatically split the window if the current buffer has been modified
@@ -173,12 +171,10 @@ set incsearch " 查询时非常方便，如要查找book单词，当输入到/b�
 set foldmethod=indent
 set foldlevel=99
 
-Bundle 'morhetz/gruvbox'
-
 set conceallevel=1
 
 "C-A + key to activate emmet
-Bundle 'mattn/emmet-vim'
+Plugin 'mattn/emmet-vim'
 
 let g:user_emmet_settings = {
             \  'php' : {
@@ -197,9 +193,9 @@ let g:user_emmet_settings = {
 let g:user_emmet_leader_key = '<C-A>'
 autocmd FileType html imap <tab> <plug>(EmmetExpandAbbr)
 
-Bundle 'othree/html5.vim'
-Bundle 'vim-scripts/c.vim'
-Bundle 'pangloss/vim-javascript'
+Plugin 'othree/html5.vim'
+Plugin 'vim-scripts/c.vim'
+Plugin 'pangloss/vim-javascript'
 
 au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=mkd syntax=markdown
 
@@ -208,27 +204,26 @@ autocmd FileType mkd inoremap ` ``<Left>
 
 map <F10> :set spell! <CR>
 
-Bundle 'nono/jquery.vim'
+Plugin 'nono/jquery.vim'
 
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 au BufRead,BufNewFile  *.ejs set filetype=html syntax=html
 
-"Bundle 'Lokaltog/vim-powerline'
+"Plugin 'Lokaltog/vim-powerline'
 "let g:Powerline_symbols = 'fancy'
 
-Bundle 'vim-scripts/awk.vim'
+Plugin 'vim-scripts/awk.vim'
 
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 "When set to "dark", Vim will try to use colors that look good on a
 "	dark background.  When set to "light", Vim will try to use colors that
 "	look good on a light background.
 syntax enable
 "set background=dark
-"colorscheme solarized
 
-Bundle 'vim-misc'
+Plugin 'vim-misc'
 
-Bundle 'maksimr/vim-jsbeautify'
+Plugin 'maksimr/vim-jsbeautify'
 
 set ts=4
 "scrollbarwidth"
@@ -313,13 +308,13 @@ for i in range(1, 9)
 endfor
 
 "神级插件,ctrlp呼出"
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 "ctrlp忽略node_modules"
 let g:ctrlp_custom_ignore = {
             \ 'dir':  'node_modules/',
             \ }
 
-Bundle 'lilydjwg/fcitx.vim'
+Plugin 'lilydjwg/fcitx.vim'
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
@@ -344,16 +339,16 @@ nnoremap <silent> <M-z> ZZ
 nnoremap <silent> <M-s> :w<CR>
 nnoremap <silent> <M-u> <C-x><C-]>
 
-Bundle 'vim-scripts/EasyGrep'
+Plugin 'vim-scripts/EasyGrep'
 
 "括号{}等成对删除添加
 "If you type <S-BS> (shift + backspace) instead, only the closing delimiter
 "will be deleted.
-Bundle 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate'
 
 
 
-""Bundle 'junegunn/goyo.vim'
+""Plugin 'junegunn/goyo.vim'
 
 "After doing all the startup stuff, including
 "loading .vimrc files, executing the "-c cmd"
@@ -361,25 +356,24 @@ Bundle 'Raimondi/delimitMate'
 "the buffers in them.
 ""autocmd VimEnter * Goyo 100
 
-"can post gist in vim
-
-Bundle 'tpope/vim-surround'
-
+"ds删除成对符号，cs修改成对符号
+Plugin 'tpope/vim-surround'
 
 "gq拆行"
 "set textwidth=78
 
-
 "对齐插件"
-Bundle 'godlygeek/tabular'
+
+" :Tabularize /,按照逗号对齐
+Plugin 'godlygeek/tabular'
 autocmd BufWritePre *.json Tab /:
 
 
-"Bundle 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 
 
 "语法提示
-"Bundle 'walm/jshint.vim'
+"Plugin 'walm/jshint.vim'
 "保存之前自动quickfix"
 "autocmd BufWritePre *.js JSHint
 ""quickfix映射
@@ -391,26 +385,26 @@ nmap <leader>cp :cp<cr>
 ""Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node.
 ""Use gf on paths or requires to open the same file Node.js would.
 ""Use :Nedit to quickly edit any module, file in a module or your project file.
-Bundle 'moll/vim-node'
+Plugin 'moll/vim-node'
 
 
-Bundle 'myhere/vim-nodejs-complete'
+Plugin 'myhere/vim-nodejs-complete'
 
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 "自动补全，替代acp"
-Bundle 'Shougo/neocomplcache.vim'
+Plugin 'Shougo/neocomplcache.vim'
 let g:neocomplcache_enable_at_startup = 1
 
 
 "自动产生session插件
-Bundle 'tpope/vim-obsession'
+Plugin 'tpope/vim-obsession'
 au BufWritePost * Obsession .vimsession
 
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 "statusline插件"
 "h airline
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 
 " 显示tab和空格
 set list
@@ -429,7 +423,7 @@ match LeaderTab /^\t/
 "window
 
 "自动配对html tag
-Bundle 'gregsexton/MatchTag'
+Plugin 'gregsexton/MatchTag'
 
 
 " CTRL-X and SHIFT-Del are Cut
@@ -461,7 +455,7 @@ vmap <S-Insert> <C-V>
 noremap <C-Q> <C-V>
 
 "高亮indent"
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermbg=Grey
@@ -472,6 +466,11 @@ let g:indent_guides_guide_size=1
 set hlsearch
 
 inoremap , ,<space>
+inoremap + +<space>
+inoremap - -<space>
+inoremap * *<space>
+inoremap / /<space>
+inoremap = =<space>
 
 "按C-N就选择一个单词，连续按就连续选择同样的单词
 "CTRL-P in Visual mode will remove the current virtual cursor and go back to
@@ -481,20 +480,21 @@ inoremap , ,<space>
 "CTRL-X in Visual mode will remove the current virtual cursor and skip to the
 "next virtual cursor location. This is useful if you don't want the current
 "selection to be a candidate to operate on later.
-Bundle 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
 set complete+=kspell
 
-Bundle 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 "let g:jedi#auto_initialization = 0
 let g:jedi#popup_select_first=0
 let g:jedi#popup_on_dot = 0
 
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
+"a gist wrapper"
+Plugin 'mattn/gist-vim'
 
-Bundle 'kchmck/vim-coffee-script'
+Plugin 'kchmck/vim-coffee-script'
 
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 "f2 to open nerdtree
 nmap <F2> :NERDTreeToggle<cr>
 "在insert模式下向右移动一格
@@ -520,9 +520,9 @@ nmap <F9> :vsp ~/.vimrc<CR>
 nmap <leader>t :tabnew<CR><C-P>
 
 "自动整理代码代码
-Bundle 'Chiel92/vim-autoformat'
+Plugin 'Chiel92/vim-autoformat'
 "autocmd QuitPre *.py,*.js Autoformat redraw!
-Bundle 'mhinz/vim-startify'
+Plugin 'mhinz/vim-startify'
 
 set hidden
 " tell it to use an undo file
@@ -532,11 +532,11 @@ set undodir=/home/ceclinux/.vim/vimundo/
 set autoread
 
 "run shell in vim
-Bundle 'Shougo/vimproc.vim'
-Bundle 'Shougo/vimshell.vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/vimshell.vim'
 "按，+ s开vimshell
 nmap <leader>s :VimShellPop<CR>
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 nmap <leader>i :Gstatus<CR>
 nmap <leader>c :Gcommit<CR>
 
@@ -544,10 +544,9 @@ nmap <leader>c :Gcommit<CR>
 set background=dark
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
-colorscheme molokai
+"colorscheme molokai
 let g:molokai_original = 1
 let g:rehash256 = 1
-set background=dark
 
 
 "Plugin 'scrooloose/syntastic'
@@ -559,9 +558,7 @@ set background=dark
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
-"let g:syntastic_python_checkers = ['pyflakes']
-Bundle 'nvie/vim-flake8'
-autocmd BufWritePost *.py call Flake8()
+"let g:syntastic_python_checkers = ['pyflakes'] Plugin 'nvie/vim-flake8' autocmd BufWritePost *.py call Flake8()
 
 autocmd BufNewFile,Bufread *.asm set ft=masm
 autocmd FileType masm call AssemblyConfig()
@@ -572,3 +569,13 @@ function AssemblyConfig()
   setlocal noexpandtab
   retab
 endfunction
+call vundle#end()
+
+colorscheme gruvbox
+Plugin 'majutsushi/tagbar'
+autocmd VimEnter * nested :call tagbar#autoopen(1)
+"Plugin 'klen/python-mode'
+"
+Plugin 'itchyny/calendar.vim'
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
