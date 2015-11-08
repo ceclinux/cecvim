@@ -3,11 +3,11 @@ cecvim
 
 my vim configuration
 
-##效果
+##ScreenShots
 
-![](http://img.vim-cn.com/33/6fd2f1a4688c3de24c183badf8c215dba9f7fb.png)
+![](http://img.vim-cn.com/d6/05538f30158dcb3c8173c1dd015c9a287eddf7.jpg)
 
-##如何安装
+##How To Install
 
 ```
 cd
@@ -15,13 +15,18 @@ git clone https://github.com/ceclinux/cecvim.git
 mv cecvim .vim
 ln -s .vim/vimrc .vimrc
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+cd .vim/bundle/YouCompleteMe
+python2 install.py --clang-completer
 ```
-然后进入vim
-输入`:BundleInstall`
-再次进入vim
-输入`:VimProcInstall`
 
-##依赖
+Enter Vim
+Type`:BundleInstall`
+Enter Vim again
+Type`:VimProcInstall`
+
+**ENJOY**
+
+##dependencies
 
 - python-jedi
 - python2-jedi

@@ -125,7 +125,7 @@ Plugin 'scrooloose/nerdcommenter'
 
 "Show the undo tree"
 Plugin 'Gundo'
-map <leader>g :GundoToggle<CR>
+map <leader>gg :GundoToggle<CR>
 
 Plugin 'msanders/snipmate.vim'
 
@@ -392,8 +392,8 @@ Plugin 'myhere/vim-nodejs-complete'
 
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 "自动补全，替代acp"
-Plugin 'Shougo/neocomplcache.vim'
-let g:neocomplcache_enable_at_startup = 1
+"Plugin 'Shougo/neocomplcache.vim'
+"let g:neocomplcache_enable_at_startup = 1
 
 
 "自动产生session插件
@@ -465,13 +465,6 @@ let g:indent_guides_guide_size=1
 
 set hlsearch
 
-inoremap , ,<space>
-inoremap + +<space>
-inoremap - -<space>
-inoremap * *<space>
-inoremap / /<space>
-inoremap = =<space>
-
 "按C-N就选择一个单词，连续按就连续选择同样的单词
 "CTRL-P in Visual mode will remove the current virtual cursor and go back to
 "the previous virtual cursor location. This is useful if you are trigger happy
@@ -484,7 +477,7 @@ Plugin 'terryma/vim-multiple-cursors'
 set complete+=kspell
 
 Plugin 'davidhalter/jedi-vim'
-"let g:jedi#auto_initialization = 0
+let g:jedi#auto_initialization = 0
 let g:jedi#popup_select_first=0
 let g:jedi#popup_on_dot = 0
 
@@ -548,18 +541,6 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 let g:molokai_original = 1
 let g:rehash256 = 1
 
-
-"Plugin 'scrooloose/syntastic'
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_python_checkers = ['pyflakes'] Plugin 'nvie/vim-flake8' autocmd BufWritePost *.py call Flake8()
-
 autocmd BufNewFile,Bufread *.asm set ft=masm
 autocmd FileType masm call AssemblyConfig()
 
@@ -572,10 +553,19 @@ endfunction
 call vundle#end()
 
 colorscheme gruvbox
-Plugin 'majutsushi/tagbar'
-autocmd VimEnter * nested :call tagbar#autoopen(1)
+"Plugin 'majutsushi/tagbar'
+"autocmd VimEnter * nested :call tagbar#autoopen(1)
 "Plugin 'klen/python-mode'
 "
 Plugin 'itchyny/calendar.vim'
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
+
+Plugin 'Valloric/YouCompleteMe'
+let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
+
+nnoremap <leader>gd :YcmCompleter GoTo<CR>
+nnoremap <leader>gt :YcmCompleter GetType<CR>
+nnoremap <leader>gp :YcmCompleter GetParent<CR>
+let g:ycm_confirm_extra_conf = 0
