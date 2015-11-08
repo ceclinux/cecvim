@@ -19,12 +19,12 @@ cd .vim/bundle/YouCompleteMe
 python2 install.py --clang-completer
 ```
 
-Enter Vim
-Type`:BundleInstall`
-Enter Vim again
-Type`:VimProcInstall`
+Enter Vim 
+Type`:BundleInstall` 
+Enter Vim again 
+Type`:VimProcInstall` 
 
-**ENJOY**
+**ENJOY**:smile:
 
 ##dependencies
 
