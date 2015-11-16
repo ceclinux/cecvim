@@ -545,16 +545,16 @@ autocmd BufNewFile,Bufread *.asm set ft=masm
 autocmd FileType masm call AssemblyConfig()
 
 function AssemblyConfig()
-  setlocal softtabstop=8
-  setlocal tabstop=8
-  setlocal noexpandtab
-  retab
+    setlocal softtabstop=8
+    setlocal tabstop=8
+    setlocal noexpandtab
+    retab
 endfunction
 call vundle#end()
 
 colorscheme gruvbox
-"Plugin 'majutsushi/tagbar'
-"autocmd VimEnter * nested :call tagbar#autoopen(1)
+Plugin 'majutsushi/tagbar'
+autocmd VimEnter * nested :call tagbar#autoopen(1)
 "Plugin 'klen/python-mode'
 "
 Plugin 'itchyny/calendar.vim'
@@ -569,3 +569,4 @@ nnoremap <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <leader>gt :YcmCompleter GetType<CR>
 nnoremap <leader>gp :YcmCompleter GetParent<CR>
 let g:ycm_confirm_extra_conf = 0
+let g:tagbar_ctags_bin='/usr/bin/ctags'
