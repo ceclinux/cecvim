@@ -79,7 +79,7 @@ filetype plugin indent on     " required!
 " NOTE: comments after Plugin command are not allowed..
 
 
-Bundle 'tomasr/molokai'
+"Bundle 'tomasr/molokai'
 "Plugin 'taglist.vim'
 ""不同时显示多个文件的tag，只显示当前文件的
 "let Tlist_Show_One_File = 1
@@ -502,6 +502,8 @@ autocmd FileType perl map <F5> <Esc>:w<CR>:!perl %<CR>
 autocmd FileType python map <F5> <Esc>:w<CR>:!python %<CR>
 "按K翻译当前单词
 autocmd FileType mkd set keywordprg=fanyi 
+autocmd BufEnter * if &filetype == "" | setlocal ft=text | endif
+autocmd FileType text set keywordprg=fanyi 
 
 map <F6> "+p
 "在单词外圈加成对符号
@@ -570,3 +572,4 @@ nnoremap <leader>gt :YcmCompleter GetType<CR>
 nnoremap <leader>gp :YcmCompleter GetParent<CR>
 let g:ycm_confirm_extra_conf = 0
 let g:tagbar_ctags_bin='/usr/bin/ctags'
+Plugin 'nanotech/jellybeans.vim'
