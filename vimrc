@@ -528,8 +528,10 @@ set autoread
 
 "run shell in vim
 Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimshell.vim'
-"按，+ s开vimshell
+"press <,-s> to open vimshell
+"in insert mode, <C-L> to list history
 nmap <leader>s :VimShellPop<CR>
 Plugin 'tpope/vim-fugitive'
 nmap <leader>i :Gstatus<CR>
