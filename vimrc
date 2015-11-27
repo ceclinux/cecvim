@@ -502,7 +502,7 @@ autocmd FileType perl map <F5> <Esc>:w<CR>:!perl %<CR>
 autocmd FileType python map <F5> <Esc>:w<CR>:!python %<CR>
 "按K翻译当前单词
 autocmd FileType mkd set keywordprg=fanyi 
-autocmd BufEnter * if &filetype == "" | setlocal ft=text | endif
+autocmd BufRead * if &filetype == "" | setlocal ft=text | endif
 autocmd FileType text set keywordprg=fanyi 
 
 map <F6> "+p
