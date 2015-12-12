@@ -1,7 +1,8 @@
 set guifont=monospace\ 14
+"number of colors set to 256
 set t_Co=256
-"g:valuename 变量为全局变量
 "let g:solarized_termcolors=256
+"THE LEADER KEADER IS MAPPED TO ,
 let g:mapleader=','
 "This option has the effect of making Vim either more Vi-compatible, or
 "make Vim behave in a more useful way.
@@ -52,17 +53,18 @@ set nocompatible
 "
 filetype off                   " required!
 " This is a list of directories which will be searched for runtime files:
+" rtp = runtimepath
 set rtp+=~/.vim/bundle/Vundle.vim
 " Lines with equal indent form a fold
 set fdm=indent
 
-call vundle#begin() " let Vundle manage Vundle
+call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "colorscheme
 Plugin 'morhetz/gruvbox'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'tpope/vim-rails.git'
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Plugin 'tpope/vim-rails.git'
 " vim-scripts repos
 Plugin 'L9'
 Plugin 'vim-scripts/FuzzyFinder'
@@ -95,29 +97,25 @@ filetype plugin indent on     " required!
 "precede each line with its line number"
 set nu
 "type rw to refactor script map <expr> rw Replace_Current_Word()
-map <expr> rw Replace_Current_Word()
-func Replace_Current_Word()
+map <expr> <Leader>rw Search_Current_Word()
+func Search_Current_Word()
     "<cword>    is replaced with the word under the cursor (like |star|)
     let w = expand("<cword>")
     "string连接用.即可"
-    return "\<ESC>:%s/\\<".w."\\>/".w."/g\<Left>\<Left>"
+    return "\<ESC>:Ag ".w.""
 endfun
 
-"基于ag的文件内搜索的插件"
-":Ag 输入关键字
+" use ag to search
+":Ag keyword
+" NOTE: require install ag in your mathine
 Plugin 'rking/ag.vim'
 
-" vim备份脚本
 " Turn backup on
 set backup
 " Set backup directory
 set backupdir=$HOME/.vim/backup
 " Keep more backups for one file
-" String wich is appended to a file name to make the name of the backup file"
-"Examples: >
-"	echo "tabstop is " . &tabstop
-"	if &insertmode
-"
+
 autocmd BufWritePre * let &backupext = strftime(".%m-%d-%H-%M")
 "<leader> cs comment a block"
 "<leader>cspace to comment out and reverse comment
@@ -149,10 +147,10 @@ fun! SPLITAG() range
 endfun
 nmap <C-]> :call SPLITAG()<CR>z.
 
-"polish complete problem"
+"polish complete problem
 set completeopt=longest,menuone
 
-"handle the chinese problem"
+"handle the chinese problem
 set encoding=utf-8
 set fileencodings=utf8,cp936,gb18030,big5
 
@@ -307,7 +305,8 @@ for i in range(1, 9)
     exec 'nnoremap <silent> <M-' . i . '> '. i .'gt'
 endfor
 
-"神级插件,ctrlp呼出"
+"call ctrlp using <c-p>
+"call ctrld to toggle filepath search
 Plugin 'kien/ctrlp.vim'
 "ctrlp忽略node_modules"
 let g:ctrlp_custom_ignore = {
@@ -339,13 +338,10 @@ nnoremap <silent> <M-z> ZZ
 nnoremap <silent> <M-s> :w<CR>
 nnoremap <silent> <M-u> <C-x><C-]>
 
-Plugin 'vim-scripts/EasyGrep'
-
 "括号{}等成对删除添加
 "If you type <S-BS> (shift + backspace) instead, only the closing delimiter
 "will be deleted.
 Plugin 'Raimondi/delimitMate'
-
 
 
 ""Plugin 'junegunn/goyo.vim'
@@ -356,14 +352,13 @@ Plugin 'Raimondi/delimitMate'
 "the buffers in them.
 ""autocmd VimEnter * Goyo 100
 
-"ds删除成对符号，cs修改成对符号
+"delete surroundings in pair, ds' deletes a pair of '
 Plugin 'tpope/vim-surround'
 
 "gq拆行"
 "set textwidth=78
 
-"对齐插件"
-
+"Tabularize plugin
 " :Tabularize /,按照逗号对齐
 Plugin 'godlygeek/tabular'
 autocmd BufWritePre *.json Tab /:
@@ -484,33 +479,34 @@ let g:jedi#popup_on_dot = 0
 Plugin 'mattn/webapi-vim'
 "a gist wrapper"
 Plugin 'mattn/gist-vim'
+let g:gist_list_vsplit = 1
 
 Plugin 'kchmck/vim-coffee-script'
 
 Plugin 'scrooloose/nerdtree'
 "f2 to open nerdtree
-nmap <F2> :NERDTreeToggle<cr>
+nmap <leader><F2> :NERDTreeToggle<cr>
 "在insert模式下向右移动一格
-inoremap <F3> <Esc><right>a
+inoremap <leader><F3> <Esc><right>a
 "打印当前行数，方便于调试
-imap <F4> <C-R>=line(".")<CR>
-autocmd Filetype mkd imap <F4> $$$$<Esc><right>i 
-autocmd FileType javascript map <F5> <Esc>:w<CR>:!node %<CR>
-autocmd FileType html map <F5> <Esc>:w<CR>:!google-chrome  %<CR>
-autocmd fileType sh map <F5> <Esc>:w<CR>:!zsh %<CR>
-autocmd FileType perl map <F5> <Esc>:w<CR>:!perl %<CR>
-autocmd FileType python map <F5> <Esc>:w<CR>:!python %<CR>
+imap <leader><F4> <C-R>=line(".")<CR>
+autocmd Filetype mkd imap <leader><F4> $$$$<Esc><right>i 
+autocmd FileType javascript map <leader><F5> <Esc>:w<CR>:!node %<CR>
+autocmd FileType html map <leader><F5> <Esc>:w<CR>:!google-chrome  %<CR>
+autocmd fileType sh map <leader><F5> <Esc>:w<CR>:!zsh %<CR>
+autocmd FileType perl map <leader><F5> <Esc>:w<CR>:!perl %<CR>
+autocmd FileType python map <leader><F5> <Esc>:w<CR>:!python %<CR>
 "按K翻译当前单词
 autocmd FileType mkd set keywordprg=fanyi 
-autocmd BufRead * if &filetype == "" | setlocal ft=text | endif
+autocmd BufReadPost * if &filetype == "" | setlocal ft=text | endif
 autocmd FileType text set keywordprg=fanyi 
 
-map <F6> "+p
+map <leader><F6> "+p
 "在单词外圈加成对符号
-map <F7> ysiw
+map <leader><F7> ysiw
 "在nautilus打开当前目录
-map <F8> :silent !byobu new -d "nautilus $(pwd)"<CR>:redraw!<CR>
-nmap <F9> :vsp ~/.vimrc<CR>
+map <leader><F8> :silent !byobu new -d "urxwt -e ranger $(pwd)"<CR>:redraw!<CR>
+nmap <leader><F9> :vsp ~/.vimrc<CR>
 "按, + t开一个新的tab
 nmap <leader>t :tabnew<CR><C-P>
 
@@ -524,6 +520,8 @@ set hidden
 set undofile
 " set a directory to store the undo history
 set undodir=/home/ceclinux/.vim/vimundo/
+"When a file has been detected to have been changed outside of Vim and
+"it has not been changed inside of Vim, automatically read it again.
 set autoread
 
 "run shell in vim
@@ -557,14 +555,15 @@ endfunction
 call vundle#end()
 
 colorscheme gruvbox
+"s             Toggle sort order between name and file order.
+"x             Toggle zooming the window.
+"p             Jump to the tag under the cursor, but stay in the Tagbar window.
+"P             Toggle the Preview Window
+
 Plugin 'majutsushi/tagbar'
 autocmd VimEnter * nested :call tagbar#autoopen(1)
 "Plugin 'klen/python-mode'
 "
-Plugin 'itchyny/calendar.vim'
-let g:calendar_google_calendar = 1
-let g:calendar_google_task = 1
-
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
@@ -575,3 +574,7 @@ nnoremap <leader>gp :YcmCompleter GetParent<CR>
 let g:ycm_confirm_extra_conf = 0
 let g:tagbar_ctags_bin='/usr/bin/ctags'
 Plugin 'nanotech/jellybeans.vim'
+
+nnoremap j jzz
+nnoremap k kzz
+Plugin 'kshenoy/vim-signature'

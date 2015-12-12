@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='scp://sandy@cwp0206.com/home/'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/usr/share/vim/vim74/doc'
+let g:netrw_dirhist_2='/home/ceclinux/Nut/class/cs118/project1'
+let g:netrw_dirhist_3='/usr/share/vim/vim74/doc'
