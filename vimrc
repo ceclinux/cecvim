@@ -575,6 +575,9 @@ let g:ycm_confirm_extra_conf = 0
 let g:tagbar_ctags_bin='/usr/bin/ctags'
 Plugin 'nanotech/jellybeans.vim'
 
+"always put cursor at the middle of the screen
 nnoremap j jzz
 nnoremap k kzz
+
+"A plugin to toggle, display and navigate marks
 Plugin 'kshenoy/vim-signature'
