@@ -471,10 +471,10 @@ set hlsearch
 Plugin 'terryma/vim-multiple-cursors'
 set complete+=kspell
 
-Plugin 'davidhalter/jedi-vim'
-let g:jedi#auto_initialization = 0
-let g:jedi#popup_select_first=0
-let g:jedi#popup_on_dot = 0
+"Plugin 'davidhalter/jedi-vim'
+"let g:jedi#auto_initialization = 0
+"let g:jedi#popup_select_first=0
+"let g:jedi#popup_on_dot = 0
 
 Plugin 'mattn/webapi-vim'
 "a gist wrapper"

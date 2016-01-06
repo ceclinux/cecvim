@@ -27,7 +27,9 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim -c 'BundleInstall'
 cd .vim/bundle/YouCompleteMe
 python2 install.py --clang-completer
-vim -c 'BundleInstall'
+cd
+wget raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py
+vim -c 'VimProcInstall'
 ```
 
 
@@ -40,6 +42,5 @@ vim -c 'BundleInstall'
 - silver-searcher-git
 - ctags
 - autopep8
-- js-beautify(npm install -g js-beautify)
 - fanyi(npm install -g fanyi)
 - flake8
