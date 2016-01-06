@@ -10,7 +10,7 @@
              `--`-----``                `--`--'  `--`-` `--`./  `--`  
 ```
 
-my vim configuration
+My vim configuration
 
 ##ScreenShots
 
@@ -37,10 +37,6 @@ vim -c 'VimProcInstall'
 
 ##dependencies
 
-- python-jedi
-- python2-jedi
-- silver-searcher-git
-- ctags
-- autopep8
-- fanyi(npm install -g fanyi)
-- flake8
+- silver-searcher-git //for replacement of grep
+- ctags //for tagbar
+- fanyi(npm install -g fanyi) //translate the word under cursor to chinese
