@@ -1,6 +1,6 @@
-set guifont=monospace\ 14
 "number of colors set to 256
 set t_Co=256
+set t_ut=
 "let g:solarized_termcolors=256
 "THE LEADER KEADER IS MAPPED TO ,
 let g:mapleader=','
@@ -195,7 +195,7 @@ Plugin 'othree/html5.vim'
 Plugin 'vim-scripts/c.vim'
 Plugin 'pangloss/vim-javascript'
 
-au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=mkd syntax=markdown
+au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=markdown syntax=markdown
 
 autocmd FileType mkd inoremap <F4> ![]()<Left>
 autocmd FileType mkd inoremap ` ``<Left>
@@ -501,7 +501,7 @@ autocmd FileType mkd set keywordprg=fanyi
 autocmd BufReadPost * if &filetype == "" | setlocal ft=text | endif
 autocmd FileType text set keywordprg=fanyi 
 
-map <leader><F6> "+p
+map <F6> "+p
 "在单词外圈加成对符号
 map <leader><F7> ysiw
 "在nautilus打开当前目录
@@ -544,6 +544,7 @@ let g:molokai_original = 1
 let g:rehash256 = 1
 
 autocmd BufNewFile,Bufread *.asm set ft=masm
+autocmd BufWritePre *.js redraw!
 autocmd FileType masm call AssemblyConfig()
 
 function AssemblyConfig()
@@ -581,3 +582,21 @@ nnoremap k kzz
 
 "A plugin to toggle, display and navigate marks
 Plugin 'kshenoy/vim-signature'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'suan/vim-instant-markdown'
+
+
+"Plugin 'scrooloose/syntastic'
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_full_redraws= 1
+"let g:syntastic_error_symbol = "✗"
+"let g:syntastic_warning_symbol = "⚠"
+"
+set cursorline cursorcolumn
