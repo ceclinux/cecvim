@@ -584,6 +584,7 @@ nnoremap k kzz
 Plugin 'kshenoy/vim-signature'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'suan/vim-instant-markdown'
+let g:vim_markdown_math = 1
 
 
 "Plugin 'scrooloose/syntastic'
@@ -598,5 +599,3 @@ Plugin 'suan/vim-instant-markdown'
 "let g:syntastic_full_redraws= 1
 "let g:syntastic_error_symbol = "✗"
 "let g:syntastic_warning_symbol = "⚠"
-"
-set cursorline cursorcolumn
