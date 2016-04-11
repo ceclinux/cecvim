@@ -1,7 +1,7 @@
 "number of colors set to 256
 set t_Co=256
 set t_ut=
-"let g:solarized_termcolors=256
+let g:solarized_termcolors=256
 "THE LEADER KEADER IS MAPPED TO ,
 let g:mapleader=','
 "This option has the effect of making Vim either more Vi-compatible, or
@@ -61,7 +61,7 @@ set fdm=indent
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "colorscheme
-Plugin 'morhetz/gruvbox'
+"Plugin 'morhetz/gruvbox'
 Plugin 'Lokaltog/vim-easymotion'
 "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Plugin 'tpope/vim-rails.git'
@@ -212,12 +212,6 @@ au BufRead,BufNewFile  *.ejs set filetype=html syntax=html
 
 Plugin 'vim-scripts/awk.vim'
 
-Plugin 'altercation/vim-colors-solarized'
-"When set to "dark", Vim will try to use colors that look good on a
-"	dark background.  When set to "light", Vim will try to use colors that
-"	look good on a light background.
-syntax enable
-"set background=dark
 
 Plugin 'vim-misc'
 
@@ -360,8 +354,6 @@ Plugin 'tpope/vim-surround'
 
 "Tabularize plugin
 " :Tabularize /,按照逗号对齐
-Plugin 'godlygeek/tabular'
-autocmd BufWritePre *.json Tab /:
 
 
 "Plugin 'scrooloose/syntastic'
@@ -555,7 +547,7 @@ function AssemblyConfig()
 endfunction
 call vundle#end()
 
-colorscheme gruvbox
+"colorscheme gruvbox
 "s             Toggle sort order between name and file order.
 "x             Toggle zooming the window.
 "p             Jump to the tag under the cursor, but stay in the Tagbar window.
@@ -582,9 +574,11 @@ nnoremap k kzz
 
 "A plugin to toggle, display and navigate marks
 Plugin 'kshenoy/vim-signature'
+Plugin 'godlygeek/tabular'
+autocmd BufWritePre *.json Tab /:
 Plugin 'plasticboy/vim-markdown'
-Plugin 'suan/vim-instant-markdown'
-let g:vim_markdown_math = 1
+"Plugin 'suan/vim-instant-markdown'
+"let g:vim_markdown_math = 1
 
 
 "Plugin 'scrooloose/syntastic'
@@ -599,3 +593,14 @@ let g:vim_markdown_math = 1
 "let g:syntastic_full_redraws= 1
 "let g:syntastic_error_symbol = "✗"
 "let g:syntastic_warning_symbol = "⚠"
+
+Plugin 'xolox/vim-notes'
+
+Plugin 'altercation/vim-colors-solarized'
+syntax enable
+set background=dark
+colorscheme solarized
+"When set to "dark", Vim will try to use colors that look good on a
+"	dark background.  When set to "light", Vim will try to use colors that
+"	look good on a light background.
+
