@@ -579,7 +579,7 @@ Plugin 'godlygeek/tabular'
 autocmd BufWritePre *.json Tab /:
 Plugin 'plasticboy/vim-markdown'
 "Plugin 'suan/vim-instant-markdown'
-"let g:vim_markdown_math = 1
+let g:vim_markdown_math = 1
 
 
 "Plugin 'scrooloose/syntastic'
