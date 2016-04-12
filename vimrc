@@ -604,3 +604,6 @@ colorscheme solarized
 "	dark background.  When set to "light", Vim will try to use colors that
 "	look good on a light background.
 
+set colorcolumn=78
+set tw=78
+set showbreak=↪
