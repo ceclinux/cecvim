@@ -369,9 +369,10 @@ nmap <leader>cd :cn<cr>
 ""上一个错误
 nmap <leader>cp :cp<cr>
 
-""Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node.
-""Use gf on paths or requires to open the same file Node.js would.
-""Use :Nedit to quickly edit any module, file in a module or your project file.
+"Tools and environment to make Vim superb for developing with Node.js. Like
+"Rails.vim for Node.
+"Use gf on paths or requires to open the same file Node.js would.
+"Use :Nedit to quickly edit any module, file in a module or your project file.
 Plugin 'moll/vim-node'
 
 
@@ -594,8 +595,6 @@ Plugin 'plasticboy/vim-markdown'
 "let g:syntastic_error_symbol = "✗"
 "let g:syntastic_warning_symbol = "⚠"
 
-Plugin 'xolox/vim-notes'
-
 Plugin 'altercation/vim-colors-solarized'
 syntax enable
 set background=dark
@@ -607,3 +606,5 @@ colorscheme solarized
 set colorcolumn=78
 set tw=78
 set showbreak=↪
+
+Plugin 'mhinz/vim-signify'
