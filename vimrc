@@ -599,6 +599,7 @@ Plugin 'altercation/vim-colors-solarized'
 syntax enable
 set background=dark
 colorscheme solarized
+
 "When set to "dark", Vim will try to use colors that look good on a
 "	dark background.  When set to "light", Vim will try to use colors that
 "	look good on a light background.
@@ -608,3 +609,4 @@ set tw=78
 set showbreak=↪
 
 Plugin 'mhinz/vim-signify'
+Plugin 'rhysd/vim-grammarous'
