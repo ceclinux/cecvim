@@ -128,7 +128,8 @@ map <leader>gg :GundoToggle<CR>
 Plugin 'msanders/snipmate.vim'
 
 
-"When jumping on a tag, automatically split the window if the current buffer has been modified
+"When jumping on a tag, automatically split the window if the current buffer
+"has been modified
 fun! SPLITAG() range
     let oldfile=expand("%:p")
     if &modified
@@ -604,7 +605,7 @@ colorscheme solarized
 "	dark background.  When set to "light", Vim will try to use colors that
 "	look good on a light background.
 
-set colorcolumn=78
+"set colorcolumn=78
 set tw=78
 set showbreak=↪
 
