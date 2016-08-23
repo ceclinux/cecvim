@@ -350,7 +350,7 @@ Plugin 'Raimondi/delimitMate'
 "delete surroundings in pair, ds' deletes a pair of '
 Plugin 'tpope/vim-surround'
 
-"gq拆行"
+"gq拆行
 "set textwidth=78
 
 "Tabularize plugin
@@ -613,3 +613,5 @@ set showbreak=↪
 
 Plugin 'mhinz/vim-signify'
 Plugin 'rhysd/vim-grammarous'
+
+command Makepdf execute "!pandoc -f markdown_github+tex_math_dollars -V fontsize=12pt % -o out.pdf"
