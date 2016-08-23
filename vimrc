@@ -569,7 +569,16 @@ nnoremap <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <leader>gt :YcmCompleter GetType<CR>
 nnoremap <leader>gp :YcmCompleter GetParent<CR>
 let g:ycm_confirm_extra_conf = 0
-let g:tagbar_ctags_bin='/usr/bin/ctags'
+
+if has("unix")
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+  else
+    let g:tagbar_ctags_bin='/usr/bin/ctags'
+  endif
+endif
+
 Plugin 'nanotech/jellybeans.vim'
 
 "always put cursor at the middle of the screen
