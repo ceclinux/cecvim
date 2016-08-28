@@ -388,7 +388,7 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 
 "自动产生session插件
 Plugin 'tpope/vim-obsession'
-au BufWritePost * Obsession .vimsession
+au BufWritePost * Obsession ~/.vimsession
 
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
