@@ -1,8 +1,9 @@
 "number of colors set to 256
 set t_Co=256
+"
 set t_ut=
 let g:solarized_termcolors=256
-"THE LEADER KEADER IS MAPPED TO ,
+"The leader key is mapped to ,
 let g:mapleader=','
 "This option has the effect of making Vim either more Vi-compatible, or
 "make Vim behave in a more useful way.
@@ -624,3 +625,4 @@ Plugin 'mhinz/vim-signify'
 Plugin 'rhysd/vim-grammarous'
 
 command Makepdf execute "!pandoc -f markdown_github+tex_math_dollars -V fontsize=12pt % -o out.pdf"
+command Ohmyzsh execute '!sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"'
