@@ -496,12 +496,9 @@ autocmd FileType mkd set keywordprg=fanyi
 autocmd BufReadPost * if &filetype == "" | setlocal ft=text | endif
 autocmd FileType text set keywordprg=fanyi 
 
-map <F6> "+p
+map <leader>p "+p
 "在单词外圈加成对符号
-map <leader><F7> ysiw
-"在nautilus打开当前目录
-map <leader><F8> :silent !byobu new -d "urxwt -e ranger $(pwd)"<CR>:redraw!<CR>
-nmap <leader><F9> :vsp ~/.vimrc<CR>
+nmap <leader>v :vsp ~/.vimrc<CR>
 "按, + t开一个新的tab
 nmap <leader>t :tabnew<CR><C-P>
 
