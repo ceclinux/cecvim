@@ -630,3 +630,5 @@ au Syntax * RainbowParenthesesLoadBraces
 map <leader>b :ls<CR>
 map <leader>n :bn<CR>
 map <leader>p :bp<CR>
+
+set wildmenu
