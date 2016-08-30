@@ -197,10 +197,9 @@ Plugin 'othree/html5.vim'
 Plugin 'vim-scripts/c.vim'
 Plugin 'pangloss/vim-javascript'
 
-au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=markdown syntax=markdown
 
-autocmd FileType mkd inoremap <F4> ![]()<Left>
 autocmd FileType mkd inoremap ` ``<Left>
+au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=markdown syntax=markdown
 
 map <F10> :set spell! <CR>
 
@@ -483,9 +482,6 @@ Plugin 'scrooloose/nerdtree'
 nmap <leader>f :NERDTreeToggle<cr>
 "在insert模式下向右移动一格
 inoremap <leader><F3> <Esc><right>a
-"打印当前行数，方便于调试
-imap <leader><F4> <C-R>=line(".")<CR>
-autocmd Filetype mkd imap <leader><F4> $$$$<Esc><right>i
 autocmd FileType javascript map <leader><F5> <Esc>:w<CR>:!node %<CR>
 autocmd FileType html map <leader><F5> <Esc>:w<CR>:!google-chrome  %<CR>
 autocmd fileType sh map <leader><F5> <Esc>:w<CR>:!zsh %<CR>
