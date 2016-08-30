@@ -91,7 +91,7 @@ filetype plugin indent on     " required!
 ""在右侧窗口中显示taglist窗口
 "let Tlist_Use_Right_Window = 1
 ""自动代开taglist窗口
-"let Tlist_Auto_Open = 1		
+"let Tlist_Auto_Open = 1
 ""Close tag folds for inactive buffers.
 "let Tlist_File_Fold_Auto_Close = 1
 
@@ -485,16 +485,16 @@ nmap <leader>f :NERDTreeToggle<cr>
 inoremap <leader><F3> <Esc><right>a
 "打印当前行数，方便于调试
 imap <leader><F4> <C-R>=line(".")<CR>
-autocmd Filetype mkd imap <leader><F4> $$$$<Esc><right>i 
+autocmd Filetype mkd imap <leader><F4> $$$$<Esc><right>i
 autocmd FileType javascript map <leader><F5> <Esc>:w<CR>:!node %<CR>
 autocmd FileType html map <leader><F5> <Esc>:w<CR>:!google-chrome  %<CR>
 autocmd fileType sh map <leader><F5> <Esc>:w<CR>:!zsh %<CR>
 autocmd FileType perl map <leader><F5> <Esc>:w<CR>:!perl %<CR>
 autocmd FileType python map <leader><F5> <Esc>:w<CR>:!python %<CR>
 "按K翻译当前单词
-autocmd FileType mkd set keywordprg=fanyi 
+autocmd FileType mkd set keywordprg=fanyi
 autocmd BufReadPost * if &filetype == "" | setlocal ft=text | endif
-autocmd FileType text set keywordprg=fanyi 
+autocmd FileType text set keywordprg=fanyi
 
 map <leader>p "+p
 "在单词外圈加成对符号
