@@ -480,7 +480,7 @@ Plugin 'kchmck/vim-coffee-script'
 
 Plugin 'scrooloose/nerdtree'
 "f2 to open nerdtree
-nmap <leader><F2> :NERDTreeToggle<cr>
+nmap <leader>f :NERDTreeToggle<cr>
 "在insert模式下向右移动一格
 inoremap <leader><F3> <Esc><right>a
 "打印当前行数，方便于调试
