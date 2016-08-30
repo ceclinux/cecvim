@@ -623,3 +623,10 @@ Plugin 'rhysd/vim-grammarous'
 
 command Makepdf execute "!pandoc -f markdown_github+tex_math_dollars -V fontsize=12pt % -o out.pdf"
 command Ohmyzsh execute '!sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"'
+
+Plugin 'kien/rainbow_parentheses.vim'
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
