@@ -554,7 +554,7 @@ call vundle#end()
 "P             Toggle the Preview Window
 
 Plugin 'majutsushi/tagbar'
-autocmd VimEnter * nested :TagbarOpen
+autocmd BufEnter * nested :call tagbar#autoopen(0)
 "auto preview tagbar
 let g:tagbar_autopreview = 1
 "Plugin 'klen/python-mode'
