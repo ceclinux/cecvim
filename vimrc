@@ -632,3 +632,5 @@ map <leader>n :bn<CR>
 map <leader>p :bp<CR>
 
 set wildmenu
+"runtime! 'ftplugin/man.vim'
+Plugin 'let-def/ocp-indent-vim'
