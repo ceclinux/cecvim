@@ -634,3 +634,15 @@ map <leader>p :bp<CR>
 set wildmenu
 "runtime! 'ftplugin/man.vim'
 Plugin 'let-def/ocp-indent-vim'
+
+"https://github.com/majutsushi/tagbar/wiki#ruby
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }
