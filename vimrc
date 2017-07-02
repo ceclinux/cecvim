@@ -646,3 +646,5 @@ let g:tagbar_type_ruby = {
         \ 'F:singleton methods'
     \ ]
 \ }
+
+Plugin 'vim-ruby/vim-ruby'
