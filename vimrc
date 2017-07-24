@@ -648,3 +648,4 @@ let g:tagbar_type_ruby = {
 \ }
 
 Plugin 'vim-ruby/vim-ruby'
+nmap <leader>u :pu<CR>
