@@ -190,7 +190,6 @@ let g:user_emmet_settings = {
             \}
 
 
-let g:user_emmet_leader_key = '<C-A>'
 autocmd FileType html imap <tab> <plug>(EmmetExpandAbbr)
 
 Plugin 'othree/html5.vim'
