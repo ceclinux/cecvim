@@ -657,3 +657,7 @@ Plugin 'honza/vim-snippets'
 let g:snippets_dir = '~/.vim/bundle/vim-snippets/snippets'
 
 nnoremap <leader>o :browse filter  oldfile<S-left><Left>
+let g:startify_files_number = 20
+command S Startify
+
+Plugin 'airblade/vim-rooter'
