@@ -661,3 +661,6 @@ let g:startify_files_number = 20
 command S Startify
 
 Plugin 'airblade/vim-rooter'
+
+"open comline window by default
+nnoremap : :<C-F>a
