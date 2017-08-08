@@ -551,8 +551,6 @@ call vundle#end()
 
 Plugin 'majutsushi/tagbar'
 autocmd BufEnter * nested :call tagbar#autoopen(0)
-"auto preview tagbar
-let g:tagbar_autopreview = 1
 "Plugin 'klen/python-mode'
 "
 Plugin 'Valloric/YouCompleteMe'
