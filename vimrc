@@ -474,8 +474,6 @@ Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 let g:gist_list_vsplit = 1
 
-Plugin 'kchmck/vim-coffee-script'
-
 Plugin 'scrooloose/nerdtree'
 "f2 to open nerdtree
 nmap <leader>f :NERDTreeToggle<cr>
