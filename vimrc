@@ -654,11 +654,21 @@ Plugin 'honza/vim-snippets'
 
 let g:snippets_dir = '~/.vim/bundle/vim-snippets/snippets'
 
-nnoremap <leader>o :browse filter  oldfile<S-left><Left>
-let g:startify_files_number = 20
+nnoremap <leader>o :CtrlPMRU<CR>
+let g:startify_files_number = 30
 command S Startify
 
+"change root accoring to the file we editing
 Plugin 'airblade/vim-rooter'
 
 "open comline window by default
 nnoremap : :<C-F>a
+"startify look the session at ~/.vim
+let g:startify_session_dir = '~/.vim/session'
+highlight StartifyBracket ctermfg=240
+highlight StartifyFooter  ctermfg=240
+highlight StartifyHeader  ctermfg=114
+highlight StartifyNumber  ctermfg=215
+highlight StartifyPath    ctermfg=245
+highlight StartifySlash   ctermfg=240
+highlight StartifySpecial ctermfg=240
