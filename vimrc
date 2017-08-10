@@ -109,7 +109,7 @@ endfun
 " use ag to search
 ":Ag keyword
 " NOTE: require install ag in your mathine
-Plugin 'rking/ag.vim'
+"Plugin 'rking/ag.vim'
 
 " Turn backup on
 set backup
@@ -672,3 +672,5 @@ highlight StartifyNumber  ctermfg=215
 highlight StartifyPath    ctermfg=245
 highlight StartifySlash   ctermfg=240
 highlight StartifySpecial ctermfg=240
+
+Plugin 'junegunn/fzf.vim'
