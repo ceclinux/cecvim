@@ -376,14 +376,6 @@ nmap <leader>cp :cp<cr>
 Plugin 'moll/vim-node'
 
 
-Plugin 'myhere/vim-nodejs-complete'
-
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"自动补全，替代acp"
-"Plugin 'Shougo/neocomplcache.vim'
-"let g:neocomplcache_enable_at_startup = 1
-
-
 "自动产生session插件
 Plugin 'tpope/vim-obsession'
 au BufWritePost * Obsession ~/.vim/session/vimsession
