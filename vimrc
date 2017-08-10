@@ -38,18 +38,18 @@ let g:mapleader=','
 
 " be iMproved
 set nocompatible
-"Detail: The ":filetype on" command will load one of these files: "		Amiga	    $VIMRUNTIME/filetype.vim
-"		Mac	    $VIMRUNTIME:filetype.vim
-"		MS-DOS	    $VIMRUNTIME\filetype.vim
-"		RiscOS	    Vim:Filetype
-"		Unix	    $VIMRUNTIME/filetype.vim
-"		VMS	    $VIMRUNTIME/filetype.vim
-"	This file is a Vim script that defines autocommands for the
-"	BufNewFile and BufRead events.  If the file type is not found by the
-"	name, the file $VIMRUNTIME/scripts.vim is used to detect it from the
-"	contents of the file.
-"	When the GUI is running or will start soon, the menu.vim script is
-"	also sourced.  See |'go-M'| about avoiding that.
+"Detail: The ":filetype on" command will load one of these files: "     Amiga       $VIMRUNTIME/filetype.vim
+"       Mac     $VIMRUNTIME:filetype.vim
+"       MS-DOS      $VIMRUNTIME\filetype.vim
+"       RiscOS      Vim:Filetype
+"       Unix        $VIMRUNTIME/filetype.vim
+"       VMS     $VIMRUNTIME/filetype.vim
+"   This file is a Vim script that defines autocommands for the
+"   BufNewFile and BufRead events.  If the file type is not found by the
+"   name, the file $VIMRUNTIME/scripts.vim is used to detect it from the
+"   contents of the file.
+"   When the GUI is running or will start soon, the menu.vim script is
+"   also sourced.  See |'go-M'| about avoiding that.
 "
 "
 filetype off                   " required!
@@ -561,12 +561,12 @@ nnoremap <leader>gp :YcmCompleter GetParent<CR>
 let g:ycm_confirm_extra_conf = 0
 
 if has("unix")
-  let s:uname = system("uname")
-  if s:uname == "Darwin\n"
-    let g:tagbar_ctags_bin='/usr/local/bin/ctags'
-  else
-    let g:tagbar_ctags_bin='/usr/bin/ctags'
-  endif
+    let s:uname = system("uname")
+    if s:uname == "Darwin\n"
+        let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+    else
+        let g:tagbar_ctags_bin='/usr/bin/ctags'
+    endif
 endif
 
 Plugin 'nanotech/jellybeans.vim'
@@ -603,8 +603,8 @@ set background=dark
 colorscheme solarized
 
 "When set to "dark", Vim will try to use colors that look good on a
-"	dark background.  When set to "light", Vim will try to use colors that
-"	look good on a light background.
+"   dark background.  When set to "light", Vim will try to use colors that
+"   look good on a light background.
 
 "set colorcolumn=78
 set tw=78
@@ -633,15 +633,15 @@ Plugin 'let-def/ocp-indent-vim'
 
 "https://github.com/majutsushi/tagbar/wiki#ruby
 let g:tagbar_type_ruby = {
-    \ 'kinds' : [
-        \ 'm:modules',
-        \ 'c:classes',
-        \ 'd:describes',
-        \ 'C:contexts',
-        \ 'f:methods',
-        \ 'F:singleton methods'
-    \ ]
-\ }
+            \ 'kinds' : [
+            \ 'm:modules',
+            \ 'c:classes',
+            \ 'd:describes',
+            \ 'C:contexts',
+            \ 'f:methods',
+            \ 'F:singleton methods'
+            \ ]
+            \ }
 
 Plugin 'vim-ruby/vim-ruby'
 nmap <leader>u :pu<CR>
