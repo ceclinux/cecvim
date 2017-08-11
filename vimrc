@@ -300,8 +300,8 @@ for i in range(1, 9)
 endfor
 
 "call ctrlp using <c-p>
+Plugin 'ctrlpvim/ctrlp.vim'
 "call ctrld to toggle filepath search
-Plugin 'kien/ctrlp.vim'
 "ctrlp忽略node_modules"
 let g:ctrlp_custom_ignore = {
             \ 'dir':  'node_modules/',
