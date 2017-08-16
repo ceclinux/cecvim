@@ -123,7 +123,7 @@ autocmd BufWritePre * let &backupext = strftime(".%m-%d-%H-%M")
 Plugin 'scrooloose/nerdcommenter'
 
 "Show the undo tree"
-Plugin 'Gundo'
+Plugin 'sjl/gundo.vim'
 map <leader>gg :GundoToggle<CR>
 
 Plugin 'msanders/snipmate.vim'
@@ -203,7 +203,7 @@ au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=markdow
 map <F10> :set spell! <CR>
 
 Plugin 'nono/jquery.vim'
-
+"required by jquery.vim
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 au BufRead,BufNewFile  *.ejs set filetype=html syntax=html
 
@@ -494,10 +494,6 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'mhinz/vim-startify'
 
 set hidden
-" tell it to use an undo file
-set undofile
-" set a directory to store the undo history
-set undodir=/home/ceclinux/.vim/vimundo/
 "When a file has been detected to have been changed outside of Vim and
 "it has not been changed inside of Vim, automatically read it again.
 set autoread
@@ -552,14 +548,7 @@ nnoremap <leader>gt :YcmCompleter GetType<CR>
 nnoremap <leader>gp :YcmCompleter GetParent<CR>
 let g:ycm_confirm_extra_conf = 0
 
-if has("unix")
-    let s:uname = system("uname")
-    if s:uname == "Darwin\n"
-        let g:tagbar_ctags_bin='/usr/local/bin/ctags'
-    else
-        let g:tagbar_ctags_bin='/usr/bin/ctags'
-    endif
-endif
+let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 
 Plugin 'nanotech/jellybeans.vim'
 
@@ -569,6 +558,7 @@ nnoremap k kzz
 
 "A plugin to toggle, display and navigate marks
 Plugin 'kshenoy/vim-signature'
+"required by vim-markdown
 Plugin 'godlygeek/tabular'
 autocmd BufWritePre *.json Tab /:
 Plugin 'plasticboy/vim-markdown'
@@ -605,7 +595,8 @@ set showbreak=↪
 Plugin 'mhinz/vim-signify'
 Plugin 'rhysd/vim-grammarous'
 
-command Makepdf execute "!pandoc -f markdown_github+tex_math_dollars -V fontsize=12pt % -o out.pdf"
+command Makepdf execute "!pandoc -f markdown_github+tex_math_dollars -V fontsize=12pt % -o " + expand('%:p:h:t') + "-out.pdf"
+"install oh-my-zsh
 command Ohmyzsh execute '!sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"'
 
 Plugin 'kien/rainbow_parentheses.vim'
@@ -620,7 +611,8 @@ map <leader>n :bn<CR>
 map <leader>p :bp<CR>
 
 set wildmenu
-"runtime! 'ftplugin/man.vim'
+
+"indent ocaml code
 Plugin 'let-def/ocp-indent-vim'
 
 "https://github.com/majutsushi/tagbar/wiki#ruby
@@ -666,3 +658,19 @@ highlight StartifySlash   ctermfg=240
 highlight StartifySpecial ctermfg=240
 
 Plugin 'junegunn/fzf.vim'
+
+
+set undofile                " Save undo's after file closes
+" Put plugins and dictionaries in this dir (also on Windows)
+let vimDir = '$HOME/.vim'
+let &runtimepath.=','.vimDir
+
+" Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+    let myUndoDir = expand(vimDir . '/undodir')
+    " Create dirs
+    call system('mkdir ' . vimDir)
+    call system('mkdir ' . myUndoDir)
+    let &undodir = myUndoDir
+    set undofile
+endif
