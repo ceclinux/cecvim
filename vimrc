@@ -630,7 +630,6 @@ let g:tagbar_type_ruby = {
 Plugin 'vim-ruby/vim-ruby'
 nmap <leader>u :pu<CR>
 
-autocmd Filetype eruby setlocal ts=2 sw=2 expandtab
 autocmd Filetype scss setlocal ts=2 sw=2 expandtab
 
 Plugin 'tpope/vim-rails'
