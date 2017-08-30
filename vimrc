@@ -674,3 +674,6 @@ if has('persistent_undo')
     let &undodir = myUndoDir
     set undofile
 endif
+
+"add icon for file types
+Plugin 'ryanoasis/vim-devicons'
