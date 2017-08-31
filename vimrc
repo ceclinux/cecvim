@@ -52,38 +52,34 @@ set nocompatible
 "   also sourced.  See |'go-M'| about avoiding that.
 "
 "
-filetype off                   " required!
+filetype on                   " required!
 " This is a list of directories which will be searched for runtime files:
 " rtp = runtimepath
-set rtp+=~/.vim/bundle/Vundle.vim
+call plug#begin('~/.vim/plugged')
 " Lines with equal indent form a fold
 set fdm=indent
 
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+Plug 'VundleVim/Vundle.vim'
 "colorscheme
-"Plugin 'morhetz/gruvbox'
-Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Plugin 'tpope/vim-rails.git'
-" vim-scripts repos
-Plugin 'L9'
-Plugin 'vim-scripts/FuzzyFinder'
+"Plug 'morhetz/gruvbox'
+Plug 'Lokaltog/vim-easymotion'
+"Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Plug 'tpope/vim-rails.git'
 
 filetype plugin indent on     " required!
 "
 " Brief help
-" :PluginList          - list configured bundles
-" :PluginInstall(!)    - install(update) bundles
-" :PluginSearch(!) foo - search(or refresh cache first) for foo
-" :PluginClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :PlugList          - list configured bundles
+" :PlugInstall(!)    - install(update) bundles
+" :PlugSearch(!) foo - search(or refresh cache first) for foo
+" :PlugClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Plugin command are not allowed..
+" NOTE: comments after Plug command are not allowed..
 
 
 "Bundle 'tomasr/molokai'
-"Plugin 'taglist.vim'
+"Plug 'taglist.vim'
 ""不同时显示多个文件的tag，只显示当前文件的
 "let Tlist_Show_One_File = 1
 ""如果taglist窗口是最后一个窗口，则退出vim
@@ -109,7 +105,7 @@ endfun
 " use ag to search
 ":Ag keyword
 " NOTE: require install ag in your mathine
-"Plugin 'rking/ag.vim'
+"Plug 'rking/ag.vim'
 
 " Turn backup on
 set backup
@@ -120,13 +116,13 @@ set backupdir=$HOME/.vim/backup
 autocmd BufWritePre * let &backupext = strftime(".%m-%d-%H-%M")
 "<leader> cs comment a block"
 "<leader>cspace to comment out and reverse comment
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 
 "Show the undo tree"
-Plugin 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim'
 map <leader>gg :GundoToggle<CR>
 
-Plugin 'msanders/snipmate.vim'
+Plug 'msanders/snipmate.vim'
 
 
 "When jumping on a tag, automatically split the window if the current buffer
@@ -174,7 +170,7 @@ set foldlevel=99
 set conceallevel=1
 
 "C-A + key to activate emmet
-Plugin 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 
 let g:user_emmet_settings = {
             \  'php' : {
@@ -192,9 +188,9 @@ let g:user_emmet_settings = {
 
 autocmd FileType html imap <tab> <plug>(EmmetExpandAbbr)
 
-Plugin 'othree/html5.vim'
-Plugin 'vim-scripts/c.vim'
-Plugin 'pangloss/vim-javascript'
+Plug 'othree/html5.vim'
+Plug 'vim-scripts/c.vim'
+Plug 'pangloss/vim-javascript'
 
 
 autocmd FileType mkd inoremap ` ``<Left>
@@ -202,20 +198,20 @@ au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=markdow
 
 map <F10> :set spell! <CR>
 
-Plugin 'nono/jquery.vim'
+Plug 'nono/jquery.vim'
 "required by jquery.vim
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 au BufRead,BufNewFile  *.ejs set filetype=html syntax=html
 
-"Plugin 'Lokaltog/vim-powerline'
+"Plug 'Lokaltog/vim-powerline'
 "let g:Powerline_symbols = 'fancy'
 
-Plugin 'vim-scripts/awk.vim'
+Plug 'vim-scripts/awk.vim'
 
 
-Plugin 'vim-misc'
+Plug 'xolox/vim-misc'
 
-Plugin 'maksimr/vim-jsbeautify'
+Plug 'maksimr/vim-jsbeautify'
 
 set ts=4
 "scrollbarwidth"
@@ -300,14 +296,14 @@ for i in range(1, 9)
 endfor
 
 "call ctrlp using <c-p>
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 "call ctrld to toggle filepath search
 "ctrlp忽略node_modules"
 let g:ctrlp_custom_ignore = {
             \ 'dir':  'node_modules/',
             \ }
 
-Plugin 'lilydjwg/fcitx.vim'
+Plug 'lilydjwg/fcitx.vim'
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
@@ -335,10 +331,10 @@ nnoremap <silent> <M-u> <C-x><C-]>
 "括号{}等成对删除添加
 "If you type <S-BS> (shift + backspace) instead, only the closing delimiter
 "will be deleted.
-Plugin 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 
 
-""Plugin 'junegunn/goyo.vim'
+""Plug 'junegunn/goyo.vim'
 
 "After doing all the startup stuff, including
 "loading .vimrc files, executing the "-c cmd"
@@ -347,7 +343,7 @@ Plugin 'Raimondi/delimitMate'
 ""autocmd VimEnter * Goyo 100
 
 "delete surroundings in pair, ds' deletes a pair of '
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 "gq拆行
 "set textwidth=78
@@ -356,11 +352,11 @@ Plugin 'tpope/vim-surround'
 " :Tabularize /,按照逗号对齐
 
 
-"Plugin 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 
 
 "语法提示
-"Plugin 'walm/jshint.vim'
+"Plug 'walm/jshint.vim'
 "保存之前自动quickfix"
 "autocmd BufWritePre *.js JSHint
 ""quickfix映射
@@ -373,18 +369,18 @@ nmap <leader>cp :cp<cr>
 "Rails.vim for Node.
 "Use gf on paths or requires to open the same file Node.js would.
 "Use :Nedit to quickly edit any module, file in a module or your project file.
-Plugin 'moll/vim-node'
+Plug 'moll/vim-node'
 
 
 "自动产生session插件
-Plugin 'tpope/vim-obsession'
+Plug 'tpope/vim-obsession'
 au BufWritePost * Obsession ~/.vim/session/vimsession
 
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 "statusline插件"
 "h airline
-Plugin 'bling/vim-airline'
+Plug 'bling/vim-airline'
 
 " 显示tab和空格
 set list
@@ -403,7 +399,7 @@ match LeaderTab /^\t/
 "window
 
 "自动配对html tag
-Plugin 'gregsexton/MatchTag'
+Plug 'gregsexton/MatchTag'
 
 
 " CTRL-X and SHIFT-Del are Cut
@@ -435,7 +431,7 @@ vmap <S-Insert> <C-V>
 noremap <C-Q> <C-V>
 
 "高亮indent"
-Plugin 'nathanaelkane/vim-indent-guides'
+Plug 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermbg=Grey
@@ -453,20 +449,20 @@ set hlsearch
 "CTRL-X in Visual mode will remove the current virtual cursor and skip to the
 "next virtual cursor location. This is useful if you don't want the current
 "selection to be a candidate to operate on later.
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 set complete+=kspell
 
-"Plugin 'davidhalter/jedi-vim'
+"Plug 'davidhalter/jedi-vim'
 "let g:jedi#auto_initialization = 0
 "let g:jedi#popup_select_first=0
 "let g:jedi#popup_on_dot = 0
 
-Plugin 'mattn/webapi-vim'
+Plug 'mattn/webapi-vim'
 "a gist wrapper"
-Plugin 'mattn/gist-vim'
+Plug 'mattn/gist-vim'
 let g:gist_list_vsplit = 1
 
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 "f2 to open nerdtree
 nmap <leader>f :NERDTreeToggle<cr>
 "在insert模式下向右移动一格
@@ -489,9 +485,9 @@ nmap <leader>v :vsp ~/.vimrc<CR>
 nmap <leader>t :tabnew<CR><C-P>
 
 "自动整理代码代码
-Plugin 'Chiel92/vim-autoformat'
+Plug 'Chiel92/vim-autoformat'
 "autocmd QuitPre *.py,*.js Autoformat redraw!
-Plugin 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 
 set hidden
 "When a file has been detected to have been changed outside of Vim and
@@ -499,13 +495,13 @@ set hidden
 set autoread
 
 "run shell in vim
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vimshell.vim'
+Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimshell.vim'
 "press <,-s> to open vimshell
 "in insert mode, <C-L> to list history
 nmap <leader>s :VimShellPop<CR>
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 nmap <leader>i :Gstatus<CR>
 nmap <leader>c :Gcommit<CR>
 
@@ -527,7 +523,6 @@ function AssemblyConfig()
     setlocal noexpandtab
     retab
 endfunction
-call vundle#end()
 
 "colorscheme gruvbox
 "s             Toggle sort order between name and file order.
@@ -535,11 +530,11 @@ call vundle#end()
 "p             Jump to the tag under the cursor, but stay in the Tagbar window.
 "P             Toggle the Preview Window
 
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 autocmd BufEnter * nested :call tagbar#autoopen(0)
-"Plugin 'klen/python-mode'
+"Plug 'klen/python-mode'
 "
-Plugin 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
 
@@ -548,25 +543,25 @@ nnoremap <leader>gt :YcmCompleter GetType<CR>
 nnoremap <leader>gp :YcmCompleter GetParent<CR>
 let g:ycm_confirm_extra_conf = 0
 
-let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+let g:tagbar_ctags_bin='/usr/bin/ctags'
 
-Plugin 'nanotech/jellybeans.vim'
+Plug 'nanotech/jellybeans.vim'
 
 "always put cursor at the middle of the screen
 nnoremap j jzz
 nnoremap k kzz
 
 "A plugin to toggle, display and navigate marks
-Plugin 'kshenoy/vim-signature'
+Plug 'kshenoy/vim-signature'
 "required by vim-markdown
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 autocmd BufWritePre *.json Tab /:
-Plugin 'plasticboy/vim-markdown'
-"Plugin 'suan/vim-instant-markdown'
+Plug 'plasticboy/vim-markdown'
+"Plug 'suan/vim-instant-markdown'
 let g:vim_markdown_math = 1
 
 
-"Plugin 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
@@ -579,10 +574,9 @@ let g:vim_markdown_math = 1
 "let g:syntastic_error_symbol = "✗"
 "let g:syntastic_warning_symbol = "⚠"
 
-Plugin 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 syntax enable
 set background=dark
-colorscheme solarized
 
 "When set to "dark", Vim will try to use colors that look good on a
 "   dark background.  When set to "light", Vim will try to use colors that
@@ -592,14 +586,14 @@ colorscheme solarized
 set tw=78
 set showbreak=↪
 
-Plugin 'mhinz/vim-signify'
-Plugin 'rhysd/vim-grammarous'
+Plug 'mhinz/vim-signify'
+Plug 'rhysd/vim-grammarous'
 
 command Makepdf execute "!pandoc -f markdown_github+tex_math_dollars -V fontsize=12pt % -o " + expand('%:p:h:t') + "-out.pdf"
 "install oh-my-zsh
 command Ohmyzsh execute '!sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"'
 
-Plugin 'kien/rainbow_parentheses.vim'
+Plug 'kien/rainbow_parentheses.vim'
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -613,7 +607,7 @@ map <leader>p :bp<CR>
 set wildmenu
 
 "indent ocaml code
-Plugin 'let-def/ocp-indent-vim'
+Plug 'let-def/ocp-indent-vim'
 
 "https://github.com/majutsushi/tagbar/wiki#ruby
 let g:tagbar_type_ruby = {
@@ -627,13 +621,13 @@ let g:tagbar_type_ruby = {
             \ ]
             \ }
 
-Plugin 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby'
 nmap <leader>u :pu<CR>
 
 autocmd Filetype scss setlocal ts=2 sw=2 expandtab
 
-Plugin 'tpope/vim-rails'
-Plugin 'honza/vim-snippets'
+Plug 'tpope/vim-rails'
+Plug 'honza/vim-snippets'
 
 let g:snippets_dir = '~/.vim/bundle/vim-snippets/snippets'
 
@@ -642,7 +636,7 @@ let g:startify_files_number = 30
 command S Startify
 
 "change root accoring to the file we editing
-Plugin 'airblade/vim-rooter'
+Plug 'airblade/vim-rooter'
 
 "open comline window by default
 nnoremap : :<C-F>a
@@ -656,7 +650,7 @@ highlight StartifyPath    ctermfg=245
 highlight StartifySlash   ctermfg=240
 highlight StartifySpecial ctermfg=240
 
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 
 
 set undofile                " Save undo's after file closes
@@ -675,4 +669,11 @@ if has('persistent_undo')
 endif
 
 "add icon for file types
-Plugin 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
+call plug#end()
+colorscheme solarized
+let g:formatterpath = ['/usr/bin/ruby-beautify']
+
+autocmd FileType ruby set expandtab
+autocmd FileType ruby set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType ruby set autoindent
