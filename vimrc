@@ -64,7 +64,6 @@ Plug 'VundleVim/Vundle.vim'
 "Plug 'morhetz/gruvbox'
 Plug 'Lokaltog/vim-easymotion'
 "Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Plug 'tpope/vim-rails.git'
 
 filetype plugin indent on     " required!
 "
@@ -628,15 +627,13 @@ autocmd Filetype scss setlocal ts=2 sw=2 expandtab
 
 Plug 'tpope/vim-rails'
 Plug 'honza/vim-snippets'
+Plug 'w0rp/ale'
 
 let g:snippets_dir = '~/.vim/bundle/vim-snippets/snippets'
 
 nnoremap <leader>o :CtrlPMRU<CR>
 let g:startify_files_number = 30
 command S Startify
-
-"change root accoring to the file we editing
-Plug 'airblade/vim-rooter'
 
 "open comline window by default
 nnoremap : :<C-F>a
