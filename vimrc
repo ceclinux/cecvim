@@ -493,13 +493,7 @@ set hidden
 "it has not been changed inside of Vim, automatically read it again.
 set autoread
 
-"run shell in vim
-Plug 'Shougo/vimproc.vim'
-Plug 'Shougo/unite.vim'
-Plug 'Shougo/vimshell.vim'
-"press <,-s> to open vimshell
-"in insert mode, <C-L> to list history
-nmap <leader>s :VimShellPop<CR>
+nmap <leader>s :ter ++rows=10<CR>
 Plug 'tpope/vim-fugitive'
 nmap <leader>i :Gstatus<CR>
 nmap <leader>c :Gcommit<CR>
