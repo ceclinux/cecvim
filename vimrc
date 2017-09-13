@@ -466,12 +466,12 @@ Plug 'scrooloose/nerdtree'
 nmap <leader>f :NERDTreeToggle<cr>
 "在insert模式下向右移动一格
 inoremap <leader><F3> <Esc><right>a
-autocmd FileType javascript map <leader>5 <Esc>:w<CR>:!node %<CR>
-autocmd FileType html map <leader>5 <Esc>:w<CR>:!google-chrome  %<CR>
-autocmd fileType sh map <leader>5 <Esc>:w<CR>:!zsh %<CR>
-autocmd FileType perl map <leader>5 <Esc>:w<CR>:!perl %<CR>
-autocmd FileType python map <leader>5 <Esc>:w<CR>:!python %<CR>
-autocmd FileType ruby map <leader>5 <Esc>:w<CR>:!ruby %<CR>
+autocmd FileType javascript map <leader>5 <Esc>:w<CR>:!node %:p<CR>
+autocmd FileType html map <leader>5 <Esc>:w<CR>:!google-chrome  %:p<CR>
+autocmd fileType sh map <leader>5 <Esc>:w<CR>:!zsh %:p<CR>
+autocmd FileType perl map <leader>5 <Esc>:w<CR>:!perl %:p<CR>
+autocmd FileType python map <leader>5 <Esc>:w<CR>:!python %:p<CR>
+autocmd FileType ruby map <leader>5 <Esc>:w<CR>:rubyf %:p<CR>
 "按K翻译当前单词
 autocmd FileType mkd set keywordprg=fanyi
 autocmd BufReadPost * if &filetype == "" | setlocal ft=text | endif
@@ -523,8 +523,6 @@ endfunction
 "p             Jump to the tag under the cursor, but stay in the Tagbar window.
 "P             Toggle the Preview Window
 
-Plug 'majutsushi/tagbar'
-autocmd BufEnter * nested :call tagbar#autoopen(0)
 "Plug 'klen/python-mode'
 "
 Plug 'Valloric/YouCompleteMe'
@@ -662,7 +660,7 @@ endif
 "add icon for file types
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
-colorscheme solarized
+colorscheme jellybeans
 let g:formatterpath = ['/usr/bin/ruby-beautify']
 
 autocmd FileType ruby set expandtab
