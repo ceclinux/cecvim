@@ -659,4 +659,6 @@ autocmd FileType ruby set expandtab
 autocmd FileType ruby set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType ruby set autoindent
 
-let g:airline_section_c = '%F'
+let g:airline_section_c = airline#section#create(['%{getcwd()}  %F'])
+
+let g:airline_powerline_fonts = 1
