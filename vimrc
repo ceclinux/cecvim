@@ -616,6 +616,7 @@ Plug 'w0rp/ale'
 let g:snippets_dir = '~/.vim/bundle/vim-snippets/snippets'
 
 nnoremap <leader>o :CtrlPMRU<CR>
+nnoremap <leader>l :CtrlPLine<CR>
 let g:startify_files_number = 30
 command S Startify
 
