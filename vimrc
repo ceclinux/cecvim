@@ -92,14 +92,6 @@ filetype plugin indent on     " required!
 
 "precede each line with its line number"
 set nu
-"type rw to refactor script map <expr> rw Replace_Current_Word()
-map <expr> <Leader>rw Search_Current_Word()
-func Search_Current_Word()
-    "<cword>    is replaced with the word under the cursor (like |star|)
-    let w = expand("<cword>")
-    "string连接用.即可"
-    return "\<ESC>:Ag ".w.""
-endfun
 
 " use ag to search
 ":Ag keyword
@@ -666,3 +658,5 @@ let g:formatterpath = ['/usr/bin/ruby-beautify']
 autocmd FileType ruby set expandtab
 autocmd FileType ruby set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType ruby set autoindent
+
+let g:airline_section_c = '%F'
