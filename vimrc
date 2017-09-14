@@ -633,8 +633,8 @@ highlight StartifyPath    ctermfg=245
 highlight StartifySlash   ctermfg=240
 highlight StartifySpecial ctermfg=240
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
 
 set undofile                " Save undo's after file closes
 " Put plugins and dictionaries in this dir (also on Windows)
@@ -664,3 +664,5 @@ autocmd FileType ruby set autoindent
 let g:airline_section_c = airline#section#create(['%{getcwd()}  %F'])
 
 let g:airline_powerline_fonts = 1
+
+command! -bang -nargs=+ -complete=dir Ag call fzf#vim#ag_raw(<q-args>, <bang>0)
