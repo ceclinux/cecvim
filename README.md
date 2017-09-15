@@ -12,31 +12,30 @@
 
 My vim configuration
 
-##ScreenShots
+## ScreenShots
 
-![](http://img.vim-cn.com/d6/05538f30158dcb3c8173c1dd015c9a287eddf7.jpg)
+![](https://i.loli.net/2017/09/15/59bb89428a8a9.png)
 
-##How To Install
+## How To Install
 
 ```
 cd
 git clone https://github.com/ceclinux/cecvim.git
 mv cecvim .vim
 ln -s .vim/vimrc .vimrc
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim -c 'BundleInstall'
-cd .vim/bundle/YouCompleteMe
-python2 install.py --clang-completer
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim -c 'PlugInstall'
 cd
 wget raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py
-vim -c 'VimProcInstall'
 ```
 
 
 **ENJOY**:smile:
 
-##dependencies
+## dependencies
 
 - silver-searcher-git //for replacement of grep
-- ctags //for tagbar
 - fanyi(npm install -g fanyi) //translate the word under cursor to chinese
+- fzf
+
