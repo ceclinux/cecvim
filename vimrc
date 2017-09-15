@@ -90,7 +90,8 @@ filetype plugin indent on     " required!
 "let Tlist_File_Fold_Auto_Close = 1
 
 "precede each line with its line number"
-set nu
+set nu relativenumber
+
 
 " use ag to search
 ":Ag keyword
