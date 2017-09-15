@@ -59,7 +59,6 @@ call plug#begin('~/.vim/plugged')
 " Lines with equal indent form a fold
 set fdm=indent
 
-Plug 'VundleVim/Vundle.vim'
 "colorscheme
 "Plug 'morhetz/gruvbox'
 Plug 'Lokaltog/vim-easymotion'
