@@ -112,7 +112,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'sjl/gundo.vim'
 map <leader>gg :GundoToggle<CR>
 
-Plug 'msanders/snipmate.vim'
+"Plug 'msanders/snipmate.vim'
+Plug 'SirVer/ultisnips'
 
 
 "When jumping on a tag, automatically split the window if the current buffer
@@ -665,3 +666,7 @@ let g:airline_section_c = airline#section#create(['%{getcwd()}  %F'])
 let g:airline_powerline_fonts = 1
 
 command! -bang -nargs=+ -complete=dir Ag call fzf#vim#ag_raw(<q-args>, <bang>0)
+
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
