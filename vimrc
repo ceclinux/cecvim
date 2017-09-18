@@ -52,7 +52,6 @@ set nocompatible
 "   also sourced.  See |'go-M'| about avoiding that.
 "
 "
-filetype on                   " required!
 " This is a list of directories which will be searched for runtime files:
 " rtp = runtimepath
 call plug#begin('~/.vim/plugged')
@@ -64,7 +63,6 @@ set fdm=indent
 Plug 'Lokaltog/vim-easymotion'
 "Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 
-filetype plugin indent on     " required!
 "
 " Brief help
 " :PlugList          - list configured bundles
@@ -467,7 +465,6 @@ autocmd FileType python map <leader>5 <Esc>:w<CR>:!python %:p<CR>
 autocmd FileType ruby map <leader>5 <Esc>:w<CR>:rubyf %:p<CR>
 "按K翻译当前单词
 autocmd FileType mkd set keywordprg=fanyi
-autocmd BufReadPost * if &filetype == "" | setlocal ft=text | endif
 autocmd FileType text set keywordprg=fanyi
 
 map <leader>p "+p
@@ -559,7 +556,6 @@ let g:vim_markdown_math = 1
 "let g:syntastic_warning_symbol = "⚠"
 
 Plug 'altercation/vim-colors-solarized'
-syntax enable
 set background=dark
 
 "When set to "dark", Vim will try to use colors that look good on a
@@ -613,8 +609,9 @@ autocmd Filetype scss setlocal ts=2 sw=2 expandtab
 Plug 'tpope/vim-rails'
 Plug 'honza/vim-snippets'
 Plug 'w0rp/ale'
+Plug 'IN3D/vim-raml'
 
-let g:snippets_dir = '~/.vim/bundle/vim-snippets/snippets'
+"let g:snippets_dir = '~/.vim/.plugged/vim-snippets/snippets'
 
 nnoremap <leader>o :CtrlPMRU<CR>
 nnoremap  <leader>l :CtrlPLine<CR>
@@ -671,3 +668,9 @@ command! -bang -nargs=+ -complete=dir Ag call fzf#vim#ag_raw(<q-args>, <bang>0)
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+
+let delimitMate_jump_expansion = 1
+au FileType tcl let b:delimitMate_jump_expansion = 1
+
+autocmd BufReadPost * if &filetype == "" | setlocal ft=text | endif
