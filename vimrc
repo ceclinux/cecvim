@@ -651,6 +651,9 @@ endif
 
 "add icon for file types
 Plug 'ryanoasis/vim-devicons'
+
+"when doing incsearch, all the words are highlighed when searching
+Plug 'haya14busa/incsearch.vim'
 call plug#end()
 colorscheme jellybeans
 let g:formatterpath = ['/usr/bin/ruby-beautify']
@@ -674,3 +677,7 @@ let delimitMate_jump_expansion = 1
 au FileType tcl let b:delimitMate_jump_expansion = 1
 
 autocmd BufReadPost * if &filetype == "" | setlocal ft=text | endif
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
