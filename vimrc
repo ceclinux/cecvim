@@ -654,6 +654,8 @@ Plug 'ryanoasis/vim-devicons'
 
 "when doing incsearch, all the words are highlighed when searching
 Plug 'haya14busa/incsearch.vim'
+Plug 'tpope/vim-rhubarb'
+
 call plug#end()
 colorscheme jellybeans
 let g:formatterpath = ['/usr/bin/ruby-beautify']
