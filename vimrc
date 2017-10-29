@@ -656,6 +656,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'haya14busa/incsearch.vim'
 Plug 'tpope/vim-rhubarb'
 
+Plug 'tacahiroy/ctrlp-funky'
 call plug#end()
 colorscheme jellybeans
 let g:formatterpath = ['/usr/bin/ruby-beautify']
