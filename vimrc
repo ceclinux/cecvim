@@ -485,7 +485,7 @@ set autoread
 
 nmap <leader>s :ter ++rows=10<CR>
 Plug 'tpope/vim-fugitive'
-nmap <leader>i :Gstatus<CR>
+nmap <leader>g :Gstatus<CR>
 nmap <leader>c :Gcommit<CR>
 
 "set textwidth of the gitcommit
