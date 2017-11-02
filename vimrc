@@ -651,6 +651,7 @@ endif
 
 "add icon for file types
 Plug 'ryanoasis/vim-devicons'
+Plug 'gregsexton/gitv'
 
 "when doing incsearch, all the words are highlighed when searching
 Plug 'haya14busa/incsearch.vim'
