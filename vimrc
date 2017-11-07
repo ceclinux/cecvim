@@ -60,7 +60,7 @@ set fdm=indent
 
 "colorscheme
 "Plug 'morhetz/gruvbox'
-Plug 'Lokaltog/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 "Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 "
