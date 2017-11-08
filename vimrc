@@ -454,7 +454,7 @@ Plug 'mattn/gist-vim'
 let g:gist_list_vsplit = 1
 
 Plug 'scrooloose/nerdtree'
-"f2 to open nerdtree
+Plug 'Xuyuanp/nerdtree-git-plugin'
 nmap <leader>f :NERDTreeToggle<cr>
 "在insert模式下向右移动一格
 inoremap <leader><F3> <Esc><right>a
