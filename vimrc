@@ -106,6 +106,7 @@ autocmd BufWritePre * let &backupext = strftime(".%m-%d-%H-%M")
 "<leader> cs comment a block"
 "<leader>cspace to comment out and reverse comment
 Plug 'scrooloose/nerdcommenter'
+let g:NERDSpaceDelims = 1
 
 "Show the undo tree"
 Plug 'sjl/gundo.vim'
