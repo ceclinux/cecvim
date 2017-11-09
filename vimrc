@@ -356,13 +356,6 @@ nmap <leader>cd :cn<cr>
 ""上一个错误
 nmap <leader>cp :cp<cr>
 
-"Tools and environment to make Vim superb for developing with Node.js. Like
-"Rails.vim for Node.
-"Use gf on paths or requires to open the same file Node.js would.
-"Use :Nedit to quickly edit any module, file in a module or your project file.
-Plug 'moll/vim-node'
-
-
 "自动产生session插件
 Plug 'tpope/vim-obsession'
 au BufWritePost * Obsession ~/.vim/session/vimsession
