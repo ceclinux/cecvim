@@ -202,8 +202,6 @@ Plug 'vim-scripts/awk.vim'
 
 Plug 'xolox/vim-misc'
 
-Plug 'maksimr/vim-jsbeautify'
-
 set ts=4
 "scrollbarwidth"
 set sw=4
