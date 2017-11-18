@@ -678,3 +678,5 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 runtime macros/matchit.vim
+
+let g:ruby_indent_assignment_style = 'hanging'
