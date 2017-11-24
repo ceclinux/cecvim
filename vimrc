@@ -625,6 +625,7 @@ highlight StartifySpecial ctermfg=240
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'AndrewRadev/splitjoin.vim'
 
 set undofile                " Save undo's after file closes
 " Put plugins and dictionaries in this dir (also on Windows)
