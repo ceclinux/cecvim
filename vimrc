@@ -593,7 +593,6 @@ let g:tagbar_type_ruby = {
             \ ]
             \ }
 
-Plug 'vim-ruby/vim-ruby'
 nmap <leader>u :pu<CR>
 
 autocmd Filetype scss setlocal ts=2 sw=2 expandtab
@@ -626,6 +625,7 @@ highlight StartifySpecial ctermfg=240
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'sheerun/vim-polyglot'
 
 set undofile                " Save undo's after file closes
 " Put plugins and dictionaries in this dir (also on Windows)
