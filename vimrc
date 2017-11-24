@@ -650,6 +650,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'tpope/vim-rhubarb'
 
 Plug 'tacahiroy/ctrlp-funky'
+Plug 'majutsushi/tagbar'
 call plug#end()
 colorscheme jellybeans
 let g:formatterpath = ['/usr/bin/ruby-beautify']
