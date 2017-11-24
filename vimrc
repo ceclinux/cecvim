@@ -658,6 +658,7 @@ let g:formatterpath = ['/usr/bin/ruby-beautify']
 autocmd FileType ruby set expandtab
 autocmd FileType ruby set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType ruby set autoindent
+autocmd FileType ruby map <leader>; abinding.pry
 
 let g:airline_section_c = airline#section#create(['%{getcwd()}  %F'])
 
