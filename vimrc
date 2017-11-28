@@ -61,6 +61,8 @@ set fdm=indent
 "colorscheme
 "Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion'
+Plug 'janko-m/vim-test'
+Plug 'tpope/vim-dispatch'
 "Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 "
@@ -684,3 +686,4 @@ map g/ <Plug>(incsearch-stay)
 runtime macros/matchit.vim
 
 let g:ruby_indent_assignment_style = 'hanging'
+let test#strategy = "dispatch"
