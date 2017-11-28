@@ -652,6 +652,7 @@ Plug 'tpope/vim-rhubarb'
 
 Plug 'tacahiroy/ctrlp-funky'
 Plug 'majutsushi/tagbar'
+Plug 'metakirby5/codi.vim'
 call plug#end()
 colorscheme jellybeans
 let g:formatterpath = ['/usr/bin/ruby-beautify']
