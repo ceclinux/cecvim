@@ -58,7 +58,6 @@ call plug#begin('~/.vim/plugged')
 " Lines with equal indent form a fold
 set fdm=indent
 
-"colorscheme
 "Plug 'morhetz/gruvbox'
 Plug 'easymotion/vim-easymotion'
 Plug 'janko-m/vim-test'
@@ -486,7 +485,6 @@ nmap <leader>c :Gcommit<CR>
 set background=dark
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
-"colorscheme molokai
 let g:molokai_original = 1
 let g:rehash256 = 1
 
@@ -501,7 +499,6 @@ function AssemblyConfig()
     retab
 endfunction
 
-"colorscheme gruvbox
 "s             Toggle sort order between name and file order.
 "x             Toggle zooming the window.
 "p             Jump to the tag under the cursor, but stay in the Tagbar window.
@@ -656,8 +653,11 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tacahiroy/ctrlp-funky'
 Plug 'majutsushi/tagbar'
 Plug 'metakirby5/codi.vim'
+Plug 'whatyouhide/vim-gotham'
 call plug#end()
-colorscheme jellybeans
+colorscheme gotham256
+"colorscheme molokai
+"colorscheme gruvbox
 let g:formatterpath = ['/usr/bin/ruby-beautify']
 
 autocmd FileType ruby set expandtab
