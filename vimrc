@@ -611,6 +611,7 @@ nnoremap  <leader>l :CtrlPLine<CR>
 map <leader>w :CtrlPLine<CR><C-\>w
 let g:startify_files_number = 30
 command S Startify
+command T TagbarToggle
 
 "open comline window by default
 nnoremap : :<C-F>a
