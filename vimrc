@@ -706,3 +706,8 @@ function! s:filter_header(lines) abort
 endfunction
 let g:startify_custom_header = s:filter_header(startify#fortune#cowsay())
 <
+
+let g:ale_fixers = {
+\   'ruby': ['rubocop'],
+\}
+let g:ale_fix_on_save = 1
