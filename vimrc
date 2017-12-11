@@ -688,3 +688,4 @@ runtime macros/matchit.vim
 
 let g:ruby_indent_assignment_style = 'hanging'
 let test#strategy = "dispatch"
+autocmd QuickFixCmdPost *grep* cwindow
