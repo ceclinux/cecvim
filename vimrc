@@ -62,6 +62,7 @@ set fdm=indent
 Plug 'easymotion/vim-easymotion'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-dispatch'
+Plug 'rhysd/vim-crystal'
 "Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 "
