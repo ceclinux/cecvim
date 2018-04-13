@@ -656,9 +656,9 @@ Plug 'tacahiroy/ctrlp-funky'
 Plug 'majutsushi/tagbar'
 Plug 'metakirby5/codi.vim'
 Plug 'whatyouhide/vim-gotham'
+
+Plug 'tpope/vim-endwise'
 call plug#end()
-colorscheme gotham256
-"colorscheme molokai
 "colorscheme gruvbox
 let g:formatterpath = ['/usr/bin/ruby-beautify']
 
