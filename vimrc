@@ -602,11 +602,12 @@ Plug 'tpope/vim-rails'
 Plug 'honza/vim-snippets'
 Plug 'w0rp/ale'
 Plug 'IN3D/vim-raml'
+Plug 'cocopon/iceberg.vim'
 
 "let g:snippets_dir = '~/.vim/.plugged/vim-snippets/snippets'
 
 nnoremap <leader>o :CtrlPMRU<CR>
-nnoremap  <leader>l :CtrlPLine<CR>
+nnoremap  <leader>l :CtrlPLine %<CR>
 map <leader>w :CtrlPLine<CR><C-\>w
 let g:startify_files_number = 30
 command S Startify
