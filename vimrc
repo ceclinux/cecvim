@@ -715,3 +715,12 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 command W w !sudo tee % > /dev/null
+
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number '.shellescape(<q-args>), 0,
+  \   <bang>0 ? fzf#vim#with_preview({'options': '--no-hscroll'},'up:60%')
+  \           : fzf#vim#with_preview({'options': '--no-hscroll'},'right:50%'),
+  \   <bang>0)
+
+map <leader>k :GGrep<CR>
