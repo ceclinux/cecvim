@@ -724,3 +724,4 @@ command! -bang -nargs=* GGrep
   \   <bang>0)
 
 map <leader>k :GGrep<CR>
+map <leader>z :term byobu<CR>
