@@ -521,10 +521,6 @@ let g:tagbar_ctags_bin='/usr/bin/ctags'
 
 Plug 'nanotech/jellybeans.vim'
 
-"always put cursor at the middle of the screen
-nnoremap j jzz
-nnoremap k kzz
-
 "A plugin to toggle, display and navigate marks
 Plug 'kshenoy/vim-signature'
 "required by vim-markdown
