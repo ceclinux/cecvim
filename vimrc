@@ -91,7 +91,7 @@ Plug 'wsdjeg/FlyGrep.vim'
 "let Tlist_File_Fold_Auto_Close = 1
 
 "precede each line with its line number"
-set nu relativenumber
+set nu
 
 
 " use ag to search
