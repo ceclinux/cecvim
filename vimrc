@@ -65,7 +65,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-dispatch'
 Plug 'rhysd/vim-crystal'
-Plug 'wsdjeg/FlyGrep.vim'
 "Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 "
