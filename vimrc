@@ -559,6 +559,7 @@ set showbreak=↪
 Plug 'mhinz/vim-signify'
 Plug 'rhysd/vim-grammarous'
 Plug 'arcticicestudio/nord-vim'
+Plug 'junegunn/vim-easy-align'
 
 "install oh-my-zsh
 command Ohmyzsh execute '!sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"'
@@ -731,3 +732,9 @@ highlight Comment cterm=italic
 highlight Italic cterm=italic
 highlight IncSearchMatch ctermfg=0 ctermbg=9 guifg=#000000 guibg=#FF0000
 let g:incsearch#magic = '\v' " very magic
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
