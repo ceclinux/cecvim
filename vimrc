@@ -1,8 +1,10 @@
 "number of colors set to 256
 set t_Co=256
 "
-set t_ut=
-let g:solarized_termcolors=256
+if &term =~ '256color'
+    set t_ut=
+endif
+" let g:solarized_termcolors=256
 "The leader key is mapped to ,
 let g:mapleader=','
 "This option has the effect of making Vim either more Vi-compatible, or
@@ -557,8 +559,8 @@ set showbreak=↪
 
 Plug 'mhinz/vim-signify'
 Plug 'rhysd/vim-grammarous'
+Plug 'arcticicestudio/nord-vim'
 
-command Makepdf execute "!pandoc -f markdown_github+tex_math_dollars -V fontsize=12pt % -o " + expand('%:p:h:t') + "-out.pdf"
 "install oh-my-zsh
 command Ohmyzsh execute '!sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"'
 
@@ -656,7 +658,10 @@ Plug 'whatyouhide/vim-gotham'
 
 Plug 'tpope/vim-endwise'
 call plug#end()
+" colorscheme gotham256
+" colorscheme solarized
 "colorscheme gruvbox
+colorscheme nord
 let g:formatterpath = ['/usr/bin/ruby-beautify']
 
 autocmd FileType ruby set expandtab
@@ -719,5 +724,8 @@ command! -bang -nargs=* GGrep
   \           : fzf#vim#with_preview({'options': '--no-hscroll'},'right:50%'),
   \   <bang>0)
 
-map <leader>k :GGrep<CR>
 map <leader>z :term byobu<CR>
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+highlight Comment cterm=italic
+highlight Italic cterm=italic
