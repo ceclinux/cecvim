@@ -715,6 +715,8 @@ let g:ale_fixers = {
 " let g:ale_fix_on_save = 1
 command W w !sudo tee % > /dev/null
 
+" open snip list
+map <leader>fs :Snip<CR>
 command! -bang -nargs=* GGrep
   \ call fzf#vim#grep(
   \   'git grep --line-number '.shellescape(<q-args>), 0,
