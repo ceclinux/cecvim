@@ -724,6 +724,7 @@ command! -bang -nargs=* GGrep
   \           : fzf#vim#with_preview({'options': '--no-hscroll'},'right:50%'),
   \   <bang>0)
 
+map <leader>k :Cd<CR>:GGrep<CR>
 map <leader>z :term byobu<CR>
 let g:nord_italic = 1
 let g:nord_italic_comments = 1
