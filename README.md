@@ -14,7 +14,7 @@ My vim configuration
 
 ## ScreenShots
 
-![](https://i.loli.net/2017/09/15/59bb89428a8a9.png)
+![](https://img.vim-cn.com/15/8a4bd9004c64c0ce9effadd104216302f0cb02.png)
 
 ## How To Install
 
