@@ -730,3 +730,5 @@ let g:nord_italic = 1
 let g:nord_italic_comments = 1
 highlight Comment cterm=italic
 highlight Italic cterm=italic
+highlight IncSearchMatch ctermfg=0 ctermbg=9 guifg=#000000 guibg=#FF0000
+let g:incsearch#magic = '\v' " very magic
