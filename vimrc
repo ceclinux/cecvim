@@ -714,7 +714,7 @@ let g:startify_custom_header = s:filter_header(startify#fortune#cowsay())
 let g:ale_fixers = {
 \   'ruby': ['rubocop'],
 \}
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
 command W w !sudo tee % > /dev/null
 
 command! -bang -nargs=* GGrep
