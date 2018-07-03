@@ -734,6 +734,7 @@ hi Comment cterm=italic
 hi Italic cterm=italic
 hi IncSearchMatch ctermfg=0 ctermbg=9 guifg=#000000 guibg=#FF0000
 hi rubyClassName gui=underline cterm=underline
+set cursorline
 
 let g:incsearch#magic = '\v' " very magic
 
