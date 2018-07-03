@@ -728,9 +728,13 @@ map <leader>k :Gcd<CR>:GGrep<CR>
 map <leader>z :term byobu<CR>
 let g:nord_italic = 1
 let g:nord_italic_comments = 1
-highlight Comment cterm=italic
-highlight Italic cterm=italic
-highlight IncSearchMatch ctermfg=0 ctermbg=9 guifg=#000000 guibg=#FF0000
+let g:nord_underline = 1
+let g:nord_cursor_line_number_background = 1
+hi Comment cterm=italic
+hi Italic cterm=italic
+hi IncSearchMatch ctermfg=0 ctermbg=9 guifg=#000000 guibg=#FF0000
+hi rubyClassName gui=underline cterm=underline
+
 let g:incsearch#magic = '\v' " very magic
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
