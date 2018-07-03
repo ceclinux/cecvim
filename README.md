@@ -27,13 +27,14 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim -c 'PlugInstall'
 cd
+mkdir .vim/session
 wget raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py
 ```
 
 
 **ENJOY**:smile:
 
-## dependencies
+## Dependencies
 
 - silver-searcher-git //for replacement of grep
 - fanyi(npm install -g fanyi) //translate the word under cursor to chinese
