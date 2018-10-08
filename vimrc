@@ -745,7 +745,8 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 hi CustomPink ctermbg=205 guibg=hotpink guifg=black ctermfg=black
-call matchadd('CustomPink', 'binding.pry')
+call matchadd('CustomPink', 'binding.pry') 
 
 hi CustomItalic cterm=italic
 call matchadd('CustomItalic', 'def')
+call matchadd('CustomItalic', 'end')
