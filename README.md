@@ -39,4 +39,5 @@ wget raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py
 - silver-searcher-git //for replacement of grep
 - fanyi(npm install -g fanyi) //translate the word under cursor to chinese
 - fzf
+- cmake(for compiling YouCompleteMe)
 
