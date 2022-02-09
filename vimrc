@@ -105,7 +105,6 @@ set backup
 " Set backup directory
 set backupdir=$HOME/.vim/backup
 " Keep more backups for one file
-
 autocmd BufWritePre * let &backupext = strftime(".%m-%d-%H-%M")
 "<leader> cs comment a block"
 "<leader>cspace to comment out and reverse comment
