@@ -654,6 +654,7 @@ Plug 'tacahiroy/ctrlp-funky'
 Plug 'majutsushi/tagbar'
 Plug 'metakirby5/codi.vim'
 Plug 'whatyouhide/vim-gotham'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'tpope/vim-endwise'
 call plug#end()
